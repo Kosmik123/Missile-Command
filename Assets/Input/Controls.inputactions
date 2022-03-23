@@ -11,7 +11,8 @@
                     "id": "fac5684f-00b4-47ae-9371-6f13e2f23647",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Fire 2",
@@ -19,7 +20,8 @@
                     "id": "e2668300-0c48-429a-aad4-76d88aa77828",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Fire 3",
@@ -27,15 +29,8 @@
                     "id": "7c3b4a8c-d1fe-4214-8eff-0053f699d26a",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Aiming",
-                    "type": "Value",
-                    "id": "b5c5e04c-8384-4491-a638-cff07628b7dc",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -71,13 +66,30 @@
                     "action": "Fire 3",
                     "isComposite": false,
                     "isPartOfComposite": false
-                },
+                }
+            ]
+        },
+        {
+            "name": "Crosshair",
+            "id": "a47da700-75df-49fb-861d-71edd9b58889",
+            "actions": [
+                {
+                    "name": "Aiming",
+                    "type": "Value",
+                    "id": "3a2ae25b-884c-4e2a-9042-0fc9d643fb73",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
                 {
                     "name": "",
-                    "id": "95fbe89b-7a4e-4f21-ad2e-a65b10e0092a",
+                    "id": "578be764-f08d-451f-84e1-6c3d44f43470",
                     "path": "<Mouse>/delta",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "ScaleVector2(x=0.5,y=0.5)",
                     "groups": "",
                     "action": "Aiming",
                     "isComposite": false,
@@ -85,10 +97,10 @@
                 },
                 {
                     "name": "Keyboard",
-                    "id": "471910cb-0fb5-441c-b0d9-4578a5381272",
+                    "id": "f40c016f-cf80-4c52-9c0a-4a2d7c790406",
                     "path": "2DVector",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "ScaleVector2(x=10,y=10)",
                     "groups": "",
                     "action": "Aiming",
                     "isComposite": true,
@@ -96,7 +108,7 @@
                 },
                 {
                     "name": "up",
-                    "id": "64d73baa-ba05-490c-a1d1-9b84b9010a17",
+                    "id": "aaa0a49d-97ca-4feb-8f50-090b3c8ee6b7",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
@@ -107,8 +119,8 @@
                 },
                 {
                     "name": "down",
-                    "id": "67644b43-00dc-43ae-b36e-724c24f1c4a8",
-                    "path": "",
+                    "id": "8834ba31-e2af-4796-b80b-23dd95278a36",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -118,7 +130,7 @@
                 },
                 {
                     "name": "left",
-                    "id": "fd78c322-ee2f-4f8c-90f3-cc7f52ce9c91",
+                    "id": "5b201e8d-6f33-4e94-b3ce-35ee0e3bc4ce",
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
@@ -129,7 +141,7 @@
                 },
                 {
                     "name": "right",
-                    "id": "1f064a19-aa27-45bb-957e-2b8d8daecdc1",
+                    "id": "c530dbc6-9448-4bf1-bdf3-acbf6f1cb172",
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
