@@ -27,6 +27,7 @@ public class CrosshairController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+
     private void Update()
     {
         move = input.Crosshair.Aiming.ReadValue<Vector2>();
@@ -38,6 +39,8 @@ public class CrosshairController : MonoBehaviour
     {
         Vector3 position = transform.position;
         position += moveSpeed * Time.deltaTime * move;
+        position.x = Mathf.Clamp(position.x, movementArea.xMin, movementArea.xMax);
+        position.y = Mathf.Clamp(position.y, movementArea.yMin, movementArea.yMax);
         transform.position = position;
     }
 
@@ -45,4 +48,14 @@ public class CrosshairController : MonoBehaviour
     {
         input.Crosshair.Disable();
     }
+
+#if UNITY_EDITOR
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireCube(movementArea.center, movementArea.size);
+    }
+
+
+#endif
 }
