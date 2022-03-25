@@ -61,7 +61,7 @@ namespace MissileCommand
 #if UNITY_EDITOR
         private void OnDrawGizmosSelected()
         {
-            Gizmos.color = Color.cyan;
+            Gizmos.color = Color.green;
             Gizmos.DrawWireCube(movementArea.center, movementArea.size);
         }
 
