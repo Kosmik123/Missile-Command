@@ -4,12 +4,8 @@ using UnityEngine.Events;
 
 namespace MissileCommand
 {
-
-
     public class ProjectileController : MonoBehaviour
     {
-        private float delta = 0.01f;
-
         [Header("Settings")]
         [SerializeField] private float speed;
         public float Speed { get => speed; set => speed = value; }
@@ -24,14 +20,8 @@ namespace MissileCommand
         [Header("Events")]
         public UnityEvent OnTargetReach;
 
-        
-
-
-
         void Update()
         {
-            //transform.Translate(Speed * Time.deltaTime * Vector3.forward);
-
             float movement = speed * Time.deltaTime;
 
             Vector3 notNormalizedDirection = targetPosition - transform.position;
@@ -44,10 +34,5 @@ namespace MissileCommand
                 transform.position += movement * notNormalizedDirection.normalized;
         
         }
-
-
-
-
     }
-
 }
