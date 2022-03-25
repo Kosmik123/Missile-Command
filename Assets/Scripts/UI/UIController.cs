@@ -1,10 +1,8 @@
-﻿
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-namespace MissileCommand
+namespace MissileCommand.UI
 {
     public class UIController : MonoBehaviour
     {
@@ -13,7 +11,7 @@ namespace MissileCommand
 
         private void OnEnable()
         {
-            GameController.OnPointsChanged += RefreshPoints; 
+            GameManager.OnPointsChanged += RefreshPoints; 
         }
 
         private void RefreshPoints(int points)
@@ -26,11 +24,9 @@ namespace MissileCommand
             highscoreIndicator.text = highscore.ToString();
         }
 
-
-
         private void OnDisable()
         {
-            GameController.OnPointsChanged -= RefreshPoints; 
+            GameManager.OnPointsChanged -= RefreshPoints; 
         }
     }
 }
