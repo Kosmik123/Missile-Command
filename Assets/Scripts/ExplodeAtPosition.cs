@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+
 namespace MissileCommand
 {
     public class ExplodeAtPosition : MonoBehaviour
@@ -6,8 +7,6 @@ namespace MissileCommand
         private float delta = 0.05f;
 
         [SerializeField] private Vector3 explodePosition;
-
-
 
         private void Update()
         {
@@ -19,9 +18,7 @@ namespace MissileCommand
 
         private void Explode()
         {
-            // Instantiate Explosion Object
-
-
+            ProjectileInstantiator.InstantiateExplosion(transform.position);
             Destroy(gameObject);
         }
     }

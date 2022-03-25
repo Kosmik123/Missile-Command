@@ -8,6 +8,7 @@ namespace MissileCommand
         private new CircleCollider2D collider;
 
         [Header("Settings")]
+        [SerializeField] private Transform model;
         [SerializeField] private AnimationCurve sizeChangeCurve;
         [SerializeField] private float maxRadius;
         [SerializeField] private float speed;
@@ -27,6 +28,7 @@ namespace MissileCommand
             radius = maxRadius * sizeChangeCurve.Evaluate(progress);
 
             collider.radius = radius;
+            model.localScale = new Vector3(radius, radius, radius);
 
             if (progress > 1)
                 Destroy(gameObject);
