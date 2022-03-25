@@ -13,10 +13,13 @@ namespace MissileCommand {
 
         private void Awake()
         {
+            crosshair.rectProvider = camera.GetComponent<CameraRectProvider>();
+
             foreach (var cannon in cannons)
             {
                 cannon.Target = crosshair.transform;
             }
+
         }
 
 

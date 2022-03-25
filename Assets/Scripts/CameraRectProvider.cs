@@ -16,13 +16,13 @@ public class CameraRectProvider : MonoBehaviour, IRectProvider
         if (camera.orthographic == false)
             throw new System.Exception("Wrong camera orthographic mode");
 
-        float height = camera.orthographicSize;
-        float width = height * camera.aspect;
+        float yExtent = camera.orthographicSize;
+        float xExtent = yExtent * camera.aspect;
 
         return new Rect(
-            transform.position.x,
-            transform.position.y,
-            width,
-            height);
+            transform.position.x - xExtent,
+            transform.position.y - yExtent,
+            2 * xExtent,
+            2 * yExtent);
     }
 }
