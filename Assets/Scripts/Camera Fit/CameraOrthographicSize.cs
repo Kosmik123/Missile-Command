@@ -10,8 +10,8 @@ public abstract class CameraFit : MonoBehaviour
     public bool active = true;
     private float lastAspect;
     
-    [Tooltip("Camera to resize")]
-    public new Camera camera;
+    [Tooltip("Cameras to resize")]
+    public  Camera[] cameras;
 
     public event EventHandler OnCameraResize;
 
@@ -19,12 +19,18 @@ public abstract class CameraFit : MonoBehaviour
 
     protected void Refresh()
     {
-        if (camera == null)
+        if (cameras == null || cameras.Length <= 0)
             return;
-        if (Mathf.Abs(camera.aspect - lastAspect) > 0.01f)
+        foreach (var cam in cameras)
         {
-            Resize();
-            OnCameraResize?.Invoke(this, EventArgs.Empty);
+            if (cam == null)
+                continue;
+
+            if (Mathf.Abs(cam.aspect - lastAspect) > 0.01f)
+            {
+                Resize();
+                OnCameraResize?.Invoke(this, EventArgs.Empty);
+            }
         }
     }
 }
@@ -47,15 +53,17 @@ public class CameraOrthographicSize : CameraFit
         Resize();
     }
 
-
     protected override void Resize()
     {
-        if (camera == null)
-            camera = GetComponent<Camera>();
-        if (!camera.orthographic)
+        if (cameras == null || cameras.Length <= 0)
             return;
+        foreach (var cam in cameras)
+        {
+            if (cam == null || cam.orthographic == false)
+                continue;
 
-        camera.orthographicSize = size * ((1 - horizontalFit) + horizontalFit / camera.aspect);
+            cam.orthographicSize = size * ((1 - horizontalFit) + horizontalFit / cam.aspect);
+        }
     }
 
 #if UNITY_EDITOR

@@ -66,7 +66,16 @@ public class CameraMainArea : CameraFit
 
     protected override void Resize()
     {
-        if (camera == null || !camera.orthographic)
+        if (cameras == null || cameras.Length <= 0)
+            return;
+
+        foreach (var cam in cameras)
+            ResizeCamera(cam);
+    }
+
+    private void ResizeCamera(Camera camera)
+    {
+        if (camera == null || camera.orthographic == false)
             return;
 
         float cameraSize = Mathf.Max(_mainAreaSize.y, _mainAreaSize.x / camera.aspect);
@@ -78,10 +87,10 @@ public class CameraMainArea : CameraFit
             _mainAreaPosition.y - (_mainAreaSize.y - cameraSize) * _verticalShift * 0.5f,
             camera.transform.localPosition.z);
 
-        ApplyChanges(newCamPos, cameraSize);
+        ApplyChanges(camera, newCamPos, cameraSize);
     }
 
-    private void ApplyChanges(Vector3 position, float size)
+    private void ApplyChanges(Camera camera, Vector3 position, float size)
     {
         camera.orthographicSize = 0.5f * size;
         camera.transform.localPosition = position;
