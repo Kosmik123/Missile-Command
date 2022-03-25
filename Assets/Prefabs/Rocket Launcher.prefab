@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 57698ab9609a41743936756fe2726992, type: 2}
+  - {fileID: 2100000, guid: 78f2709a53bd968428c6849f949d893b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cannon: {fileID: 1913203183501792428}
+  rocketPrefab: {fileID: 0}
 --- !u!1 &6820594369667112265
 GameObject:
   m_ObjectHideFlags: 0

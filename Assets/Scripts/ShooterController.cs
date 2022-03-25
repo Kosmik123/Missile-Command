@@ -1,30 +1,38 @@
 using UnityEngine;
-
-public class ShooterController : MonoBehaviour
+namespace MissileCommand
 {
-    [SerializeField] private Transform cannon;
 
-    private CrosshairController crosshairController;
-
-    private void Start()
+    public class ShooterController : MonoBehaviour
     {
-        crosshairController = FindObjectOfType<CrosshairController>();    
+        private Transform target;
+        public Transform Target { get => target; set => target = value; }
+
+        [SerializeField] private Transform cannon;
+        [SerializeField] private GameObject rocketPrefab;
+ 
+
+        private void Update()
+        {
+            Aim(target.position);
+        }
+
+
+        public void Aim(Vector3 targetPosition)
+        {
+            cannon.LookAt(targetPosition);
+        }
+
+
+        public void Shoot()
+        {
+
+        }
+
+
+
+
+
+
+
     }
-
-
-    public void Aim (Vector3 targetPosition)
-    {
-        cannon.LookAt(targetPosition);
-    }
-
-
-    private void Update()
-    {
-        Aim(crosshairController.transform.position);
-    }
-
-
-
-
-
 }

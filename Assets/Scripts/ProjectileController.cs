@@ -1,14 +1,14 @@
 using UnityEngine;
-
-public class ProjectileController : MonoBehaviour
+namespace MissileCommand
 {
-    [SerializeField] private float speed;
 
-
-
-
-    void Update()
+    public class ProjectileController : MonoBehaviour
     {
-        transform.Translate(speed * Time.deltaTime * Vector3.up);
+        [SerializeField] private float speed;
+
+        void Update()
+        {
+            transform.Translate(speed * Time.deltaTime * Vector3.up);
+        }
     }
 }
