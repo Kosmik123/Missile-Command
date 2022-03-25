@@ -7,9 +7,9 @@ namespace MissileCommand
 {
 
 
-    public class GameController : MonoBehaviour
+    public class GameManager : MonoBehaviour
     {
-        public static GameController Instance { get; private set; }
+        public static GameManager Instance { get; private set; }
 
         public static event Action<int> OnPointsChanged;
 
