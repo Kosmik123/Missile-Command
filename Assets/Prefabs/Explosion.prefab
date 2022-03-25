@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8238488085734733795}
-  - component: {fileID: 4891106726016740675}
+  - component: {fileID: 5756625911057347448}
+  - component: {fileID: 5136036538392692210}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -31,22 +32,55 @@ Transform:
   m_Father: {fileID: 3620675942346281696}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &4891106726016740675
-CircleCollider2D:
+--- !u!33 &5756625911057347448
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3500641040967054146}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &5136036538392692210
+MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3500641040967054146}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 0e0ab5cc05f831448892377796a30640, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &3620675942346281702
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,38 +142,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b6d9f436a4ee28469c3c88f14772ced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  model: {fileID: 8238488085734733795}
   sizeChangeCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
-      inSlope: 0.034082964
-      outSlope: 0.034082964
+      value: 0.3
+      inSlope: 1.7175703
+      outSlope: 1.7175703
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.100652374
+      outWeight: 0.10502794
     - serializedVersion: 3
       time: 0.5
       value: 1
-      inSlope: 0.09608228
-      outSlope: 0.09608228
+      inSlope: 0.058028292
+      outSlope: 0.058028292
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.16906908
-      outWeight: 0.12331326
+      inWeight: 0.103910625
+      outWeight: 0.1351955
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: 0.0000034109758
-      outSlope: 0.0000034109758
+      inSlope: -0.26998523
+      outSlope: -0.26998523
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.06989747
+      inWeight: 0.2324022
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  maxRadius: 1
-  speed: 0.25
+  maxRadius: 2
+  speed: 0.5
