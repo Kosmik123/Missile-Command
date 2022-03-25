@@ -22,17 +22,27 @@ namespace MissileCommand
             collider = GetComponent<CircleCollider2D>();
         }
 
+        private void Start()
+        {
+            radius = maxRadius * sizeChangeCurve.Evaluate(progress);
+            Refresh();
+        }
+
         private void Update()
         {
             progress += speed * Time.deltaTime;
             radius = maxRadius * sizeChangeCurve.Evaluate(progress);
 
-            collider.radius = radius;
-            model.localScale = new Vector3(radius, radius, radius);
+            Refresh();
 
             if (progress > 1)
                 Destroy(gameObject);
         }
 
+        private void Refresh()
+        {
+            collider.radius = radius;
+            model.localScale = new Vector3(radius, radius, radius);
+        }
     }
 }

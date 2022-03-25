@@ -166,8 +166,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22fe8464b15a46479df7cee8318c0c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cannon: {fileID: 1913203183501792428}
-  rocketPrefab: {fileID: 0}
+  cannonModel: {fileID: 1913203183501792428}
+  canRotate3D: 0
+  rocketSpeed: 0
+  shootAction:
+    m_Name: Shoot
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 68195e2a-d78d-4ef4-934f-942d17201cba
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  ammunition: 10
 --- !u!1 &6820594369667112265
 GameObject:
   m_ObjectHideFlags: 0
