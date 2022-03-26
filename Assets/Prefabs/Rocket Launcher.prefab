@@ -178,7 +178,8 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
-  ammunition: 10
+  initialAmmunition: 10
+  ammunition: 0
 --- !u!1 &6820594369667112265
 GameObject:
   m_ObjectHideFlags: 0

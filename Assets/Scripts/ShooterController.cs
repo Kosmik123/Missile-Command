@@ -6,6 +6,8 @@ namespace MissileCommand
 {
     public class ShooterController : MonoBehaviour
     {
+        public event Action<int> OnAmmunitionChanged;
+
         private Transform target;
         public Transform Target { get => target; set => target = value; }
 
@@ -14,17 +16,21 @@ namespace MissileCommand
         [SerializeField] private bool canRotate3D;
         [SerializeField] private float rocketSpeed;
         [SerializeField] private InputAction shootAction;
-
-
-
+        [SerializeField] private int initialAmmunition;
+        
         [Header("States")]
         [SerializeField] private int ammunition;
-
   
         private void OnEnable()
         {
             shootAction.Enable();
-            shootAction.performed += DoShoot;           
+            shootAction.performed += DoShoot;  
+            
+        }
+
+        private void Start()
+        {
+            SetAmmunition(initialAmmunition);
         }
 
         private void DoShoot(InputAction.CallbackContext context)
@@ -50,8 +56,14 @@ namespace MissileCommand
             if (ammunition <= 0)
                 return;
 
-            ammunition -= 1;
+            SetAmmunition(ammunition - 1);
             ProjectileInstantiator.InstantiateRocket(cannonModel.position, cannonModel.rotation, rocketSpeed, target.position);
+        }
+
+        private void SetAmmunition(int newValue)
+        {
+            ammunition = newValue;
+            OnAmmunitionChanged?.Invoke(ammunition);
         }
 
         private void OnDisable()
