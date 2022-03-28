@@ -4,18 +4,12 @@ using UnityEngine;
 
 namespace MissileCommand.UI
 {
-    [RequireComponent(typeof(RectTransform))]
+    [RequireComponent(typeof(Canvas))]
     public class CanvasResizer : MonoBehaviour
     {
-        public IRectProvider rectProvider;
-
-        private void Awake()
-        {
-
-        }
-
         private void Start()
         {
+            var rectProvider = GetComponent<Canvas>().worldCamera.GetComponent<CameraRectProvider>();
             Rect rect = rectProvider.GetRect();
             RectTransform rectTransform = GetComponent<RectTransform>();
             rectTransform.position = rect.center;

@@ -216,7 +216,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8907708845007461302}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a451b20ea16ab2b409a3c8defa41d7f8, type: 3}
+  m_Script: {fileID: 11500000, guid: fd296a29ee10a35408bb2272510efc1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ammoSymbolPrefab: {fileID: 455331155759667531, guid: 63abdeb999f48d248833816d92ba66a6,

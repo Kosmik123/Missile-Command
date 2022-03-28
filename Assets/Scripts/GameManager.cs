@@ -12,25 +12,34 @@ namespace MissileCommand
 
         public static event Action<int> OnPointsChanged;
 
-        [Header("Settings")]
+        [Header("To Link")]
         [SerializeField] private new Camera camera;
         [SerializeField] private CrosshairController crosshair;
+        [SerializeField] private EnemyManager enemyManager;
         [SerializeField] private ShooterController[] cannons;
 
+        [Header("Properties")]
+        [SerializeField] private int difficulty;
+    
         [Header("States")]
-        [SerializeField] private float points;
-        public float Points { get => points; private set => points = value; }
+        [SerializeField] private int points;
+        public int Points { get => points; private set => points = value; }
 
         private void Awake()
         {
             Instance = Singleton.MakeInstance(this, Instance);
-            crosshair.rectProvider = camera.GetComponent<CameraRectProvider>();
+            DontDestroyOnLoad(this);
+            
+            crosshair.rectProvider = enemyManager.rectProvider = camera.GetComponent<CameraRectProvider>();
 
             foreach (var cannon in cannons)
-            {
                 cannon.Target = crosshair.transform;
-            }
+
+            difficulty = 1;
+        
         }
+
+
 
         public void AddPoints(int points)
         {

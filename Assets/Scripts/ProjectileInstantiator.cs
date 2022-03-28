@@ -24,8 +24,7 @@ namespace MissileCommand {
             obj.transform.position = position;
         }
 
-
-        public static void InstantiateRocket(Vector3 position, Quaternion rotation, float speed, Vector3 finalPosition)
+        public static void InstantiatePlayersRocket(Vector3 position, Quaternion rotation, float speed, Vector3 finalPosition)
         {
             var obj = Instantiate(Instance.rocketPrefab, position, rotation);
             obj.GetComponent<ExplodeAtPosition>().ExplodePosition = finalPosition;
@@ -34,5 +33,17 @@ namespace MissileCommand {
             rocket.Speed = speed;
             rocket.TargetPosition = finalPosition;
         }
+
+        public static void InstantiateEnemyMissile(Vector3 position, float speed, Vector3 finalPosition)
+        {
+            var obj = Instantiate(Instance.rocketPrefab, position, Quaternion.identity);
+            obj.GetComponent<ExplodeAtPosition>().ExplodePosition = finalPosition;
+
+            var rocket = obj.GetComponent<ProjectileController>();
+            rocket.Speed = speed;
+            rocket.TargetPosition = finalPosition;
+        }
+
+
     }
 }

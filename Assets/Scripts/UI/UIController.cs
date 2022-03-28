@@ -39,7 +39,7 @@ namespace MissileCommand.UI
             var obj = Instantiate(cannonAmmoIndicator, worldCanvas.transform);
             obj.transform.position = shooterController.transform.position;
 
-            var indicator = obj.GetComponent<AmmunitionIndicatorController>();
+            var indicator = obj.GetComponent<AmmoIndicatorController>();
             indicator.Shooter = shooterController;
             indicator.Init();
         }

@@ -5,7 +5,7 @@ using System;
 
 namespace MissileCommand.UI
 {
-    public class AmmunitionIndicatorController : MonoBehaviour
+    public class AmmoIndicatorController : MonoBehaviour
     {
         private ShooterController shooter;
         public ShooterController Shooter { get => shooter; set => shooter = value; }
@@ -60,7 +60,6 @@ namespace MissileCommand.UI
                 symbols[i].gameObject.SetActive(i < count);
             }
         }
-
 
         private void RefreshInfoLabel(int count)
         {
