@@ -18,9 +18,12 @@ namespace MissileCommand
         [SerializeField] private EnemyManager enemyManager;
         [SerializeField] private ShooterController[] cannons;
 
+        [Header("Settings")]
+        [SerializeField] private int baseRocketCount;
+
         [Header("Properties")]
         [SerializeField] private int difficulty;
-    
+
         [Header("States")]
         [SerializeField] private int points;
         public int Points { get => points; private set => points = value; }
@@ -31,6 +34,7 @@ namespace MissileCommand
             DontDestroyOnLoad(this);
             
             crosshair.rectProvider = enemyManager.rectProvider = camera.GetComponent<CameraRectProvider>();
+            enemyManager.SetDifficulty(difficulty);
 
             foreach (var cannon in cannons)
                 cannon.Target = crosshair.transform;

@@ -57,8 +57,10 @@ namespace MissileCommand
                 return;
 
             SetAmmunition(ammunition - 1);
-            ProjectileInstantiator.InstantiatePlayersRocket(cannonModel.position, cannonModel.rotation, rocketSpeed, target.position);
+
+            ProjectileInstantiator.InstantiatePlayersRocket(cannonModel.position, rocketSpeed, target.position);
         }
+
 
         private void SetAmmunition(int newValue)
         {
