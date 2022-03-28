@@ -42,7 +42,7 @@ namespace MissileCommand
         private void Refresh()
         {
             collider.radius = radius;
-            model.localScale = new Vector3(radius, radius, radius);
+            model.localScale = 2 * radius * Vector3.one;
         }
     }
 }

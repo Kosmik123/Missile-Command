@@ -10,7 +10,8 @@ namespace MissileCommand {
         public static ProjectileInstantiator Instance { get; private set; }
 
         [Header("Prefabs")]
-        [SerializeField] private GameObject rocketPrefab;
+        [SerializeField] private GameObject playerRocketPrefab;
+        [SerializeField] private GameObject enemyRocketPrefab;
         [SerializeField] private GameObject explosionPrefab;
 
         private void Awake()
@@ -18,32 +19,38 @@ namespace MissileCommand {
             Instance = Singleton.MakeInstance(this, Instance);
         }
 
-        public static void InstantiateExplosion(Vector3 position)
+        public static void InstantiateExplosion(Vector3 position, string tag = "Default")
         {
             var obj = Instantiate(Instance.explosionPrefab);
             obj.transform.position = position;
+            obj.tag = tag;
         }
 
         public static void InstantiatePlayersRocket(Vector3 position, float speed, Vector3 finalPosition)
         {
             float angle = CalculateAngle(position, finalPosition);
-            var obj = Instantiate(Instance.rocketPrefab, position, Quaternion.AngleAxis(angle, Vector3.forward));
-            obj.GetComponent<ExplodeAtPosition>().ExplodePosition = finalPosition;
-            
-            var rocket = obj.GetComponent<ProjectileController>();
-            rocket.Speed = speed;
-            rocket.TargetPosition = finalPosition;
+            InstantiateMissile(Instance.playerRocketPrefab, position, angle, speed, finalPosition, GameManager.playerTag);
         }
 
         public static void InstantiateEnemyMissile(Vector3 position, float speed, Vector3 finalPosition)
         {
-            var obj = Instantiate(Instance.rocketPrefab, position, Quaternion.identity);
+            float angle = CalculateAngle(position, finalPosition);
+            InstantiateMissile(Instance.enemyRocketPrefab, position, angle, speed, finalPosition, GameManager.enemyTag);
+        }
+
+        private static GameObject InstantiateMissile(GameObject prefab, Vector3 position, float angle, float speed, Vector3 finalPosition, string tag)
+        {
+            var obj = Instantiate(prefab, position, Quaternion.AngleAxis(angle, Vector3.forward));
+            obj.tag = tag;
             obj.GetComponent<ExplodeAtPosition>().ExplodePosition = finalPosition;
 
             var rocket = obj.GetComponent<ProjectileController>();
             rocket.Speed = speed;
             rocket.TargetPosition = finalPosition;
+
+            return obj;
         }
+
         private static float CalculateAngle(Vector3 startPosition, Vector3 endPosition)
         {
             Vector3 direction = endPosition - startPosition;

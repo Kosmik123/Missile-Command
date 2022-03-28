@@ -8,6 +8,9 @@ namespace MissileCommand
 
     public class GameManager : MonoBehaviour
     {
+        public static string enemyTag = "Enemy";
+        public static string playerTag = "Player";
+        
         public static GameManager Instance { get; private set; }
 
         public static event Action<int> OnPointsChanged;

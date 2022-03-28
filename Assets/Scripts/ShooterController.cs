@@ -20,12 +20,12 @@ namespace MissileCommand
         
         [Header("States")]
         [SerializeField] private int ammunition;
-  
+
         private void OnEnable()
         {
             shootAction.Enable();
-            shootAction.performed += DoShoot;  
-            
+            shootAction.performed += DoShoot;
+            SetAmmunition(initialAmmunition);
         }
 
         private void Start()
@@ -71,6 +71,7 @@ namespace MissileCommand
         private void OnDisable()
         {
             shootAction.Disable();
+            SetAmmunition(0);
             shootAction.performed -= DoShoot;
         }
     }
