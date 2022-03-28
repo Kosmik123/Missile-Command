@@ -1221,7 +1221,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ac15a2429d282242a78dbe06e76e233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackInterval: 0
+  baseMissileCount: 4
+  attackInterval: 3
+  maxMissileCount: 4
+  generationAreaHeight: 1
+  generationArea:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  possibleTargets:
+  - {fileID: 1356635956}
+  - {fileID: 1803271838}
+  - {fileID: 234162604}
+  - {fileID: 438747964}
+  - {fileID: 706562105}
+  - {fileID: 559167676}
+  - {fileID: 1914433744}
+  - {fileID: 710821987}
+  - {fileID: 147905154}
+  rocketsCount: 0
+  remainingRockets: 0
 --- !u!4 &1262477440
 Transform:
   m_ObjectHideFlags: 0
@@ -1854,10 +1875,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 501527175}
   crosshair: {fileID: 29541132}
+  enemyManager: {fileID: 1262477439}
   cannons:
   - {fileID: 1610872749}
   - {fileID: 1560938343}
   - {fileID: 1734487592}
+  baseRocketCount: 0
+  difficulty: 1
   points: 0
 --- !u!114 &1583725801
 MonoBehaviour:
