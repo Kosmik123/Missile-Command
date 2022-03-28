@@ -42,7 +42,6 @@ namespace MissileCommand {
         {
             var obj = Instantiate(prefab, position, Quaternion.AngleAxis(angle, Vector3.forward));
             obj.tag = tag;
-            obj.GetComponent<ExplodeAtPosition>().ExplodePosition = finalPosition;
 
             var rocket = obj.GetComponent<ProjectileController>();
             rocket.Speed = speed;

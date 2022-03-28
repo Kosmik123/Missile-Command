@@ -19,7 +19,8 @@ namespace MissileCommand
         [SerializeField] private new Camera camera;
         [SerializeField] private CrosshairController crosshair;
         [SerializeField] private EnemyManager enemyManager;
-        [SerializeField] private ShooterController[] cannons;
+        [SerializeField] private Transform citiesContainer;
+        [SerializeField] private Transform cannonsContainer;
 
         [Header("Settings")]
         [SerializeField] private int baseRocketCount;
@@ -29,7 +30,9 @@ namespace MissileCommand
 
         [Header("States")]
         [SerializeField] private int points;
-        public int Points { get => points; private set => points = value; }
+
+        private ShooterController[] cannons;
+        private Destructible[] cities;
 
         private void Awake()
         {
@@ -37,23 +40,34 @@ namespace MissileCommand
             DontDestroyOnLoad(this);
             
             crosshair.rectProvider = enemyManager.rectProvider = camera.GetComponent<CameraRectProvider>();
-            enemyManager.SetDifficulty(difficulty);
 
             foreach (var cannon in cannons)
                 cannon.Target = crosshair.transform;
 
             difficulty = 1;
+
+            cannons = cannonsContainer.GetComponentsInChildren<ShooterController>();
+            cities = citiesContainer.GetComponentsInChildren<Destructible>();
         
         }
 
-
-
-        public void AddPoints(int points)
+        private void RestartGame()
         {
-            if (points < 0)
+            enemyManager.SetDifficulty(difficulty);
+
+            foreach (var cannon in cannons)
+                cannon.gameObject.SetActive(true);
+
+
+
+        }
+
+        public void AddPoints(int pointsBase)
+        {
+            if (pointsBase < 0)
                 return;
 
-            this.points += points;
+            points += difficulty * pointsBase;
             OnPointsChanged?.Invoke(points);
         }
 

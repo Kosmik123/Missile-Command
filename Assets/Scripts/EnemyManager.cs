@@ -42,13 +42,18 @@ namespace MissileCommand
 
             wait = new WaitForSeconds(attackInterval);
 
+            Restart();
+        }
+
+        public void Restart()
+        {
             StartCoroutine(nameof(DropMissilesCo));
+            remainingRockets = rocketsCount;
         }
 
         public void SetDifficulty(int difficulty)
         {
             rocketsCount = baseMissileCount + difficulty;
-            remainingRockets = rocketsCount;
         }
 
         private void DropMissile()

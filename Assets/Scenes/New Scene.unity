@@ -620,7 +620,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 1, g: 0.97702324, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -637,11 +637,11 @@ Camera:
   far clip plane: 100
   field of view: 60
   orthographic: 1
-  orthographic size: 11
+  orthographic size: 12.232031
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 23
+    m_Bits: 1559
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -688,7 +688,7 @@ MonoBehaviour:
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
-    m_Bits: 311
+    m_Bits: 1847
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 0
@@ -741,6 +741,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1453849258}
     m_Modifications:
+    - target: {fileID: 3109903089146150077, guid: 6a61040a302d1714689707d81e98b899,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5542652558219590255, guid: 6a61040a302d1714689707d81e98b899,
         type: 3}
       propertyPath: rocketSpeed
@@ -781,10 +786,20 @@ PrefabInstance:
       propertyPath: shootAction.m_SingletonActionBindings.Array.data[1].m_Action
       value: Shoot
       objectReference: {fileID: 0}
+    - target: {fileID: 5563600677339946499, guid: 6a61040a302d1714689707d81e98b899,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5850832918008786248, guid: 6a61040a302d1714689707d81e98b899,
         type: 3}
       propertyPath: m_Name
       value: Rocket Launcher (Right)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5850832918008786248, guid: 6a61040a302d1714689707d81e98b899,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6791477127743275812, guid: 6a61040a302d1714689707d81e98b899,
         type: 3}
@@ -839,6 +854,11 @@ PrefabInstance:
     - target: {fileID: 6791477127743275812, guid: 6a61040a302d1714689707d81e98b899,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6820594369667112265, guid: 6a61040a302d1714689707d81e98b899,
+        type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1016,6 +1036,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1453849258}
     m_Modifications:
+    - target: {fileID: 3109903089146150077, guid: 6a61040a302d1714689707d81e98b899,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5542652558219590255, guid: 6a61040a302d1714689707d81e98b899,
         type: 3}
       propertyPath: rocketSpeed
@@ -1056,10 +1081,20 @@ PrefabInstance:
       propertyPath: shootAction.m_SingletonActionBindings.Array.data[1].m_Action
       value: Shoot
       objectReference: {fileID: 0}
+    - target: {fileID: 5563600677339946499, guid: 6a61040a302d1714689707d81e98b899,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5850832918008786248, guid: 6a61040a302d1714689707d81e98b899,
         type: 3}
       propertyPath: m_Name
       value: Rocket Launcher (Center)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5850832918008786248, guid: 6a61040a302d1714689707d81e98b899,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6791477127743275812, guid: 6a61040a302d1714689707d81e98b899,
         type: 3}
@@ -1114,6 +1149,11 @@ PrefabInstance:
     - target: {fileID: 6791477127743275812, guid: 6a61040a302d1714689707d81e98b899,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6820594369667112265, guid: 6a61040a302d1714689707d81e98b899,
+        type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1221,8 +1261,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ac15a2429d282242a78dbe06e76e233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMissileCount: 4
-  attackInterval: 3
+  baseMissileCount: 8
+  attackInterval: 4
   maxMissileCount: 4
   generationAreaHeight: 1
   generationArea:
@@ -1680,7 +1720,7 @@ Camera:
   far clip plane: 30
   field of view: 60
   orthographic: 1
-  orthographic size: 11
+  orthographic size: 12.232031
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1895,7 +1935,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35cb01223a12c1d459f2595293054e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rocketPrefab: {fileID: 1676822389284066529, guid: db2717304c929d0418d050c6ae7d876e,
+  playerRocketPrefab: {fileID: 1676822389284066529, guid: db2717304c929d0418d050c6ae7d876e,
+    type: 3}
+  enemyRocketPrefab: {fileID: 3814377487392842982, guid: 28bac9671c33f7545b2488bf4bc571a1,
     type: 3}
   explosionPrefab: {fileID: 3620675942346281702, guid: bfd6905d4409ba24491fe86f6b3ca620,
     type: 3}
@@ -2285,6 +2327,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1453849258}
     m_Modifications:
+    - target: {fileID: 3109903089146150077, guid: 6a61040a302d1714689707d81e98b899,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5542652558219590255, guid: 6a61040a302d1714689707d81e98b899,
         type: 3}
       propertyPath: rocketSpeed
@@ -2325,10 +2372,20 @@ PrefabInstance:
       propertyPath: shootAction.m_SingletonActionBindings.Array.data[1].m_Action
       value: Shoot
       objectReference: {fileID: 0}
+    - target: {fileID: 5563600677339946499, guid: 6a61040a302d1714689707d81e98b899,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5850832918008786248, guid: 6a61040a302d1714689707d81e98b899,
         type: 3}
       propertyPath: m_Name
       value: Rocket Launcher (Left)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5850832918008786248, guid: 6a61040a302d1714689707d81e98b899,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6791477127743275812, guid: 6a61040a302d1714689707d81e98b899,
         type: 3}
@@ -2383,6 +2440,11 @@ PrefabInstance:
     - target: {fileID: 6791477127743275812, guid: 6a61040a302d1714689707d81e98b899,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6820594369667112265, guid: 6a61040a302d1714689707d81e98b899,
+        type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

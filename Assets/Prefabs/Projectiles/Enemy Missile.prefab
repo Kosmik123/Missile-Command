@@ -56,6 +56,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2569902862993649671}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &499566449707795899 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2685535176707519932, guid: db2717304c929d0418d050c6ae7d876e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2569902862993649671}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3814377487392842982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf7e1838357f1924f8eba7d18cc7a4b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!70 &7667590643034450730
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -85,3 +97,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destructionType: 1
+  OnBeingDestroyed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3105712416431378526}
+        m_TargetAssemblyTypeName: MissileCommand.PointsValue, Assembly-CSharp
+        m_MethodName: AddPoints
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 499566449707795899}
+        m_TargetAssemblyTypeName: MissileCommand.ExplodeAtPosition, Assembly-CSharp
+        m_MethodName: Explode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3105712416431378526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3814377487392842982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56685bc3084a30741b11c59ec9bc05a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 25

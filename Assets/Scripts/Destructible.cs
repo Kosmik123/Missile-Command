@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace MissileCommand
 {
     [RequireComponent(typeof(Collider2D))]
     public class Destructible : MonoBehaviour
     {
+
         public enum DestructionType
         {
             DisableObject,
@@ -15,9 +17,14 @@ namespace MissileCommand
 
         [SerializeField] private DestructionType destructionType;
 
+        [Header("Events")]
+        public UnityEvent OnBeingDestroyed;
 
         private void OnTriggerEnter2D(Collider2D other)
         {
+            if (other.CompareTag("Building"))
+                return;
+
             switch (destructionType)
             {
                 case DestructionType.DisableObject:
@@ -28,7 +35,7 @@ namespace MissileCommand
                     break;
             }
 
-            ProjectileInstantiator.InstantiateExplosion(transform.position, gameObject.tag);
+            OnBeingDestroyed?.Invoke();
         }
     }
 }
