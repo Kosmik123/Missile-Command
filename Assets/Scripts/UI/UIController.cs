@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +15,8 @@ namespace MissileCommand.UI
         [Header("To link")]
         [SerializeField] private Canvas worldCanvas;
 
+        [SerializeField] private RectTransform results;
+
         [SerializeField] private TMP_Text pointsIndicator;
         [SerializeField] private TMP_Text highscoreIndicator;
 
@@ -26,7 +29,13 @@ namespace MissileCommand.UI
 
         private void OnEnable()
         {
-            GameManager.OnPointsChanged += RefreshPoints; 
+            GameManager.OnPointsChanged += RefreshPoints;
+            EnemyManager.OnRocketsEnded += ShowResults;
+        }
+
+        private void ShowResults()
+        {
+            
         }
 
         private void RefreshPoints(int points)
@@ -53,7 +62,8 @@ namespace MissileCommand.UI
 
         private void OnDisable()
         {
-            GameManager.OnPointsChanged -= RefreshPoints; 
+            GameManager.OnPointsChanged -= RefreshPoints;
+            EnemyManager.OnRocketsEnded -= ShowResults;
         }
     }
 }

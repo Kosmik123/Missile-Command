@@ -38,28 +38,32 @@ namespace MissileCommand
         {
             Instance = Singleton.MakeInstance(this, Instance);
             DontDestroyOnLoad(this);
+            difficulty = 1;
             
             crosshair.rectProvider = enemyManager.rectProvider = camera.GetComponent<CameraRectProvider>();
 
-            foreach (var cannon in cannons)
-                cannon.Target = crosshair.transform;
-
-            difficulty = 1;
-
             cannons = cannonsContainer.GetComponentsInChildren<ShooterController>();
             cities = citiesContainer.GetComponentsInChildren<Destructible>();
-        
+
+            foreach (var cannon in cannons)
+                cannon.Target = crosshair.transform;
+        }
+
+        private void Start()
+        {
+            RestartGame();
         }
 
         private void RestartGame()
         {
             enemyManager.SetDifficulty(difficulty);
+            enemyManager.Restart();
 
             foreach (var cannon in cannons)
                 cannon.gameObject.SetActive(true);
 
-
-
+            foreach (var city in cities)
+                city.gameObject.SetActive(true);
         }
 
         public void AddPoints(int pointsBase)

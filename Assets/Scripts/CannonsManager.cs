@@ -20,6 +20,7 @@ namespace MissileCommand
             foreach(var shooter in cannons)
             {
                 UI.UIController.Instance.InstantiateCannonAmmoIndicator(shooter);
+                shooter.Init();
             }
         }
     }

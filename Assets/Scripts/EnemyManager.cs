@@ -6,7 +6,7 @@ namespace MissileCommand
 {
     public class EnemyManager : MonoBehaviour
     {
-        public event System.Action OnRocketsEnded;
+        public static event System.Action OnRocketsEnded;
 
         [Header("Settings")]
         [Tooltip("Base for calculating overall missiles count that can be shot in a level")]
@@ -26,29 +26,21 @@ namespace MissileCommand
         [SerializeField] private Transform[] possibleTargets;
         [SerializeField] private int rocketsCount;
 
-
         [Header("States")]
         [SerializeField] private int remainingRockets;
 
         public IRectProvider rectProvider;
-
         private YieldInstruction wait;
 
-
-        private void Start()
+        public void Restart()
         {
             Rect gameplayRect = rectProvider.GetRect();
             generationArea = new Rect(new Vector2(gameplayRect.xMin, gameplayRect.yMax), new Vector2(gameplayRect.width, generationAreaHeight));
 
             wait = new WaitForSeconds(attackInterval);
 
-            Restart();
-        }
-
-        public void Restart()
-        {
-            StartCoroutine(nameof(DropMissilesCo));
             remainingRockets = rocketsCount;
+            StartCoroutine(nameof(DropMissilesCo));
         }
 
         public void SetDifficulty(int difficulty)
@@ -62,14 +54,14 @@ namespace MissileCommand
             Vector3 position = new Vector3(
                 Random.Range(generationArea.xMin, generationArea.xMax),
                 Random.Range(generationArea.yMin, generationArea.yMax));
-            ProjectileInstantiator.InstantiateEnemyMissile(position, 1, targetPosition);
-            rocketsCount--;
+            ProjectileInstantiator.InstantiateEnemyMissile(position, 1, targetPosition, transform);
+            remainingRockets--;
         }
 
 
         private IEnumerator DropMissilesCo()
         {
-            while (rocketsCount > 0)
+            while (remainingRockets > 0)
             {
                 for (int i = 0; i < Random.Range(1, maxMissileCount); i++)
                     DropMissile();
@@ -77,6 +69,10 @@ namespace MissileCommand
                 yield return wait;
             }
 
+            while (transform.childCount > 0)
+                yield return wait;
+
+            Debug.Log("KONIEC RAKIET");
             OnRocketsEnded?.Invoke();
         }
 

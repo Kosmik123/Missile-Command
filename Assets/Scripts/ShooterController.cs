@@ -28,8 +28,9 @@ namespace MissileCommand
             SetAmmunition(initialAmmunition);
         }
 
-        private void Start()
+        public void Init()
         {
+            Debug.Log($"Shooter start. New ammo = {initialAmmunition}");
             SetAmmunition(initialAmmunition);
         }
 
@@ -70,8 +71,8 @@ namespace MissileCommand
 
         private void OnDisable()
         {
+            SetAmmunition(0); 
             shootAction.Disable();
-            SetAmmunition(0);
             shootAction.performed -= DoShoot;
         }
     }

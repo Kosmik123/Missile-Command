@@ -26,21 +26,22 @@ namespace MissileCommand {
             obj.tag = tag;
         }
 
-        public static void InstantiatePlayersRocket(Vector3 position, float speed, Vector3 finalPosition)
+        public static void InstantiatePlayersRocket(Vector3 position, float speed, Vector3 finalPosition, Transform parent = null)
         {
             float angle = CalculateAngle(position, finalPosition);
-            InstantiateMissile(Instance.playerRocketPrefab, position, angle, speed, finalPosition, GameManager.playerTag);
+            InstantiateMissile(Instance.playerRocketPrefab, position, angle, speed, finalPosition, GameManager.playerTag, parent);
         }
 
-        public static void InstantiateEnemyMissile(Vector3 position, float speed, Vector3 finalPosition)
+        public static void InstantiateEnemyMissile(Vector3 position, float speed, Vector3 finalPosition, Transform parent = null)
         {
             float angle = CalculateAngle(position, finalPosition);
-            InstantiateMissile(Instance.enemyRocketPrefab, position, angle, speed, finalPosition, GameManager.enemyTag);
+            InstantiateMissile(Instance.enemyRocketPrefab, position, angle, speed, finalPosition, GameManager.enemyTag, parent);
         }
 
-        private static GameObject InstantiateMissile(GameObject prefab, Vector3 position, float angle, float speed, Vector3 finalPosition, string tag)
+        private static GameObject InstantiateMissile(GameObject prefab, Vector3 position, float angle,
+            float speed, Vector3 finalPosition, string tag, Transform parent)
         {
-            var obj = Instantiate(prefab, position, Quaternion.AngleAxis(angle, Vector3.forward));
+            var obj = Instantiate(prefab, position, Quaternion.AngleAxis(angle, Vector3.forward), parent);
             obj.tag = tag;
 
             var rocket = obj.GetComponent<ProjectileController>();
