@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 2
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 816647f41f721d14698a49d97c35fe14, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 12ccb828343c3405fb94289774b51aad, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18631656, g: 0.5225312, b: 0.83267707, a: 1}
+  m_IndirectSpecularColor: {r: 0.15896629, g: 0.5175354, b: 1.0392404, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -754,9 +754,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5542652558219590255, guid: 6a61040a302d1714689707d81e98b899,
         type: 3}
-      propertyPath: rocketSpeed
-      value: 8
-      objectReference: {fileID: 0}
+      propertyPath: shootInput
+      value: 
+      objectReference: {fileID: 1329659339021031859, guid: 3b33fcf6398671e4c9749cadcae430cb,
+        type: 3}
     - target: {fileID: 5542652558219590255, guid: 6a61040a302d1714689707d81e98b899,
         type: 3}
       propertyPath: shootAction.m_SingletonActionBindings.Array.size
@@ -1090,6 +1091,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5542652558219590255, guid: 6a61040a302d1714689707d81e98b899,
         type: 3}
+      propertyPath: shootInput
+      value: 
+      objectReference: {fileID: 8589656450606417561, guid: 3b33fcf6398671e4c9749cadcae430cb,
+        type: 3}
+    - target: {fileID: 5542652558219590255, guid: 6a61040a302d1714689707d81e98b899,
+        type: 3}
       propertyPath: rocketSpeed
       value: 15
       objectReference: {fileID: 0}
@@ -1316,7 +1323,6 @@ MonoBehaviour:
   baseMissileCount: 8
   attackInterval: 4
   maxMissileCount: 4
-  generationAreaHeight: 1
   generationArea:
     serializedVersion: 2
     x: 0
@@ -1334,7 +1340,7 @@ MonoBehaviour:
   - {fileID: 710821987}
   - {fileID: 147905154}
   rocketsCount: 0
-  remainingRockets: 0
+  remainingRocketsCount: 0
 --- !u!4 &1262477440
 Transform:
   m_ObjectHideFlags: 0
@@ -1620,7 +1626,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &1445657115
 Transform:
@@ -1657,7 +1663,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 5c63f25233b29a14cadd9d89a0760af0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1665,7 +1671,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
+  m_ReceiveGI: 2
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2030,11 +2036,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 257b61f836746034b802f6da2ca8e0dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerRocketPrefab: {fileID: 1676822389284066529, guid: db2717304c929d0418d050c6ae7d876e,
+  playerRocketPrefab: {fileID: 1268833721239579131, guid: db2717304c929d0418d050c6ae7d876e,
     type: 3}
-  enemyRocketPrefab: {fileID: 3814377487392842982, guid: 28bac9671c33f7545b2488bf4bc571a1,
+  enemyRocketPrefab: {fileID: 3616932034791561724, guid: 28bac9671c33f7545b2488bf4bc571a1,
     type: 3}
-  explosionPrefab: {fileID: 3620675942346281702, guid: bfd6905d4409ba24491fe86f6b3ca620,
+  explosionPrefab: {fileID: 3620675942346281697, guid: bfd6905d4409ba24491fe86f6b3ca620,
     type: 3}
 --- !u!4 &1803271838 stripped
 Transform:
@@ -2430,9 +2436,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5542652558219590255, guid: 6a61040a302d1714689707d81e98b899,
         type: 3}
-      propertyPath: rocketSpeed
-      value: 8
-      objectReference: {fileID: 0}
+      propertyPath: shootInput
+      value: 
+      objectReference: {fileID: 6490894547543263630, guid: 3b33fcf6398671e4c9749cadcae430cb,
+        type: 3}
     - target: {fileID: 5542652558219590255, guid: 6a61040a302d1714689707d81e98b899,
         type: 3}
       propertyPath: shootAction.m_SingletonActionBindings.Array.size

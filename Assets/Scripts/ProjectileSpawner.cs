@@ -8,11 +8,11 @@ namespace MissileCommand
 
         [Header("Prefabs")]
         [SerializeField] 
-        private GameObject playerRocketPrefab;
+        private ProjectileController playerRocketPrefab;
         [SerializeField]
-        private GameObject enemyRocketPrefab;
+        private ProjectileController enemyRocketPrefab;
         [SerializeField]
-        private GameObject explosionPrefab;
+        private ExplosionController explosionPrefab;
 
         private void Awake()
         {
@@ -38,17 +38,16 @@ namespace MissileCommand
             InstantiateMissile(Instance.enemyRocketPrefab, position, angle, speed, finalPosition, GameManager.enemyTag, parent);
         }
 
-        private static GameObject InstantiateMissile(GameObject prefab, Vector3 position, float angle,
+        private static ProjectileController InstantiateMissile(ProjectileController prefab, Vector3 position, float angle,
             float speed, Vector3 finalPosition, string tag, Transform parent)
         {
-            var obj = Instantiate(prefab, position, Quaternion.AngleAxis(angle, Vector3.forward), parent);
-            obj.tag = tag;
+            var rocket = Instantiate(prefab, position, Quaternion.AngleAxis(angle, Vector3.forward), parent);
+            rocket.tag = tag;
 
-            var rocket = obj.GetComponent<ProjectileController>();
             rocket.Speed = speed;
             rocket.TargetPosition = finalPosition;
 
-            return obj;
+            return rocket;
         }
 
         private static float CalculateAngle(Vector3 startPosition, Vector3 endPosition)
