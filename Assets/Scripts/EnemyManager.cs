@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-
 namespace MissileCommand
 {
     public class EnemyManager : MonoBehaviour
@@ -17,12 +16,10 @@ namespace MissileCommand
         [SerializeField] 
         private float attackInterval;
         
-        [Tooltip("Maximum count of missiles that can be shot in one attack wave")]
-        [SerializeField] 
+        [SerializeField, Tooltip("Maximum count of missiles that can be shot in one attack wave")]
         private int maxMissileCount;
         
         [Tooltip("Height of rect in which missiles are spawned")]
-        [SerializeField]
         private float generationAreaHeight;
 
         [Header("Properties")]
@@ -35,7 +32,7 @@ namespace MissileCommand
 
         [Header("States")]
         [SerializeField]
-        private int remainingRockets;
+        private int remainingRocketsCount;
 
         public IRectProvider rectProvider;
         private YieldInstruction wait;
@@ -47,7 +44,7 @@ namespace MissileCommand
 
             wait = new WaitForSeconds(attackInterval);
 
-            remainingRockets = rocketsCount;
+            remainingRocketsCount = rocketsCount;
             StartCoroutine(nameof(DropMissilesCo));
         }
 
@@ -58,18 +55,18 @@ namespace MissileCommand
 
         private void DropMissile()
         {
-            Vector3 targetPosition = possibleTargets[UnityEngine.Random.Range(0, possibleTargets.Length)].position;
+            Vector3 targetPosition = possibleTargets[Random.Range(0, possibleTargets.Length)].position;
             Vector3 position = new Vector3(
                 Random.Range(generationArea.xMin, generationArea.xMax),
                 Random.Range(generationArea.yMin, generationArea.yMax));
             ProjectileSpawner.InstantiateEnemyMissile(position, 1, targetPosition, transform);
-            remainingRockets--;
+            remainingRocketsCount--;
         }
 
 
         private IEnumerator DropMissilesCo()
         {
-            while (remainingRockets > 0)
+            while (remainingRocketsCount > 0)
             {
                 for (int i = 0; i < Random.Range(1, maxMissileCount); i++)
                     DropMissile();

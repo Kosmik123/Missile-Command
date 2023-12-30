@@ -12,9 +12,7 @@ namespace MissileCommand
         private InputActionReference crosshairAimingInput;
         [SerializeField]
         private float moveSpeed;
-        [SerializeField] 
         private Rect movementArea;
-
 
         //[Header("States")]
         private Vector3 move;
