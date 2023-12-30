@@ -1,18 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-
-namespace MissileCommand {
-
-    public class ProjectileInstantiator : MonoBehaviour
+namespace MissileCommand 
+{
+    public class ProjectileSpawner : MonoBehaviour
     {
-        public static ProjectileInstantiator Instance { get; private set; }
+        public static ProjectileSpawner Instance { get; private set; }
 
         [Header("Prefabs")]
-        [SerializeField] private GameObject playerRocketPrefab;
-        [SerializeField] private GameObject enemyRocketPrefab;
-        [SerializeField] private GameObject explosionPrefab;
+        [SerializeField] 
+        private GameObject playerRocketPrefab;
+        [SerializeField]
+        private GameObject enemyRocketPrefab;
+        [SerializeField]
+        private GameObject explosionPrefab;
 
         private void Awake()
         {

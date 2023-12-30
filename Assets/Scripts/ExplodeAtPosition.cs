@@ -6,7 +6,7 @@ namespace MissileCommand
     {
         public void Explode()
         {
-            ProjectileInstantiator.InstantiateExplosion(transform.position, gameObject.tag);
+            ProjectileSpawner.InstantiateExplosion(transform.position, gameObject.tag);
             Destroy(gameObject);
         }
     }
