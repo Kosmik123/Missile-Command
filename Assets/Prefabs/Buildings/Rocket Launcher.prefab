@@ -175,16 +175,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cannonModel: {fileID: 1913203183501792428}
   canRotate3D: 0
-  rocketSpeed: 0
-  shootAction:
-    m_Name: Shoot
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 68195e2a-d78d-4ef4-934f-942d17201cba
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
+  rocketSpeed: 8
+  shootInput: {fileID: 0}
   initialAmmunition: 10
   ammunition: 0
 --- !u!58 &7033182523774186726
@@ -304,7 +296,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 073c018b94a957e4ea63b863b660e66f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
