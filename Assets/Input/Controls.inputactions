@@ -6,7 +6,7 @@
             "id": "ff891f9d-6b35-4bdb-a323-dfcdb9a8ddd8",
             "actions": [
                 {
-                    "name": "Fire 1",
+                    "name": "Fire Left",
                     "type": "Button",
                     "id": "fac5684f-00b4-47ae-9371-6f13e2f23647",
                     "expectedControlType": "Button",
@@ -15,7 +15,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Fire 2",
+                    "name": "Fire Center",
                     "type": "Button",
                     "id": "e2668300-0c48-429a-aad4-76d88aa77828",
                     "expectedControlType": "Button",
@@ -24,7 +24,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Fire 3",
+                    "name": "Fire Right",
                     "type": "Button",
                     "id": "7c3b4a8c-d1fe-4214-8eff-0053f699d26a",
                     "expectedControlType": "Button",
@@ -41,7 +41,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Fire 1",
+                    "action": "Fire Left",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -52,7 +52,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Fire 1",
+                    "action": "Fire Left",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -63,7 +63,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Fire 2",
+                    "action": "Fire Center",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -74,7 +74,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Fire 3",
+                    "action": "Fire Right",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -85,7 +85,7 @@
                     "interactions": "Press(behavior=1)",
                     "processors": "",
                     "groups": "",
-                    "action": "Fire 2",
+                    "action": "Fire Center",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -96,7 +96,7 @@
                     "interactions": "Press(behavior=1)",
                     "processors": "",
                     "groups": "",
-                    "action": "Fire 3",
+                    "action": "Fire Right",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -133,7 +133,7 @@
                     "id": "f40c016f-cf80-4c52-9c0a-4a2d7c790406",
                     "path": "2DVector",
                     "interactions": "",
-                    "processors": "ScaleVector2(x=10,y=10)",
+                    "processors": "ScaleVector2(x=5,y=5)",
                     "groups": "",
                     "action": "Aiming",
                     "isComposite": true,

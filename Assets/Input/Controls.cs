@@ -28,7 +28,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
             ""id"": ""ff891f9d-6b35-4bdb-a323-dfcdb9a8ddd8"",
             ""actions"": [
                 {
-                    ""name"": ""Fire 1"",
+                    ""name"": ""Fire Left"",
                     ""type"": ""Button"",
                     ""id"": ""fac5684f-00b4-47ae-9371-6f13e2f23647"",
                     ""expectedControlType"": ""Button"",
@@ -37,7 +37,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Fire 2"",
+                    ""name"": ""Fire Center"",
                     ""type"": ""Button"",
                     ""id"": ""e2668300-0c48-429a-aad4-76d88aa77828"",
                     ""expectedControlType"": ""Button"",
@@ -46,7 +46,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Fire 3"",
+                    ""name"": ""Fire Right"",
                     ""type"": ""Button"",
                     ""id"": ""7c3b4a8c-d1fe-4214-8eff-0053f699d26a"",
                     ""expectedControlType"": ""Button"",
@@ -63,7 +63,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Fire 1"",
+                    ""action"": ""Fire Left"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -74,7 +74,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Fire 1"",
+                    ""action"": ""Fire Left"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -85,7 +85,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Fire 2"",
+                    ""action"": ""Fire Center"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -96,7 +96,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Fire 3"",
+                    ""action"": ""Fire Right"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -107,7 +107,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""interactions"": ""Press(behavior=1)"",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Fire 2"",
+                    ""action"": ""Fire Center"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -118,7 +118,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""interactions"": ""Press(behavior=1)"",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Fire 3"",
+                    ""action"": ""Fire Right"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -155,7 +155,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""id"": ""f40c016f-cf80-4c52-9c0a-4a2d7c790406"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
-                    ""processors"": ""ScaleVector2(x=10,y=10)"",
+                    ""processors"": ""ScaleVector2(x=5,y=5)"",
                     ""groups"": """",
                     ""action"": ""Aiming"",
                     ""isComposite"": true,
@@ -212,9 +212,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
 }");
         // Cannons
         m_Cannons = asset.FindActionMap("Cannons", throwIfNotFound: true);
-        m_Cannons_Fire1 = m_Cannons.FindAction("Fire 1", throwIfNotFound: true);
-        m_Cannons_Fire2 = m_Cannons.FindAction("Fire 2", throwIfNotFound: true);
-        m_Cannons_Fire3 = m_Cannons.FindAction("Fire 3", throwIfNotFound: true);
+        m_Cannons_FireLeft = m_Cannons.FindAction("Fire Left", throwIfNotFound: true);
+        m_Cannons_FireCenter = m_Cannons.FindAction("Fire Center", throwIfNotFound: true);
+        m_Cannons_FireRight = m_Cannons.FindAction("Fire Right", throwIfNotFound: true);
         // Crosshair
         m_Crosshair = asset.FindActionMap("Crosshair", throwIfNotFound: true);
         m_Crosshair_Aiming = m_Crosshair.FindAction("Aiming", throwIfNotFound: true);
@@ -277,16 +277,16 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     // Cannons
     private readonly InputActionMap m_Cannons;
     private ICannonsActions m_CannonsActionsCallbackInterface;
-    private readonly InputAction m_Cannons_Fire1;
-    private readonly InputAction m_Cannons_Fire2;
-    private readonly InputAction m_Cannons_Fire3;
+    private readonly InputAction m_Cannons_FireLeft;
+    private readonly InputAction m_Cannons_FireCenter;
+    private readonly InputAction m_Cannons_FireRight;
     public struct CannonsActions
     {
         private @Controls m_Wrapper;
         public CannonsActions(@Controls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Fire1 => m_Wrapper.m_Cannons_Fire1;
-        public InputAction @Fire2 => m_Wrapper.m_Cannons_Fire2;
-        public InputAction @Fire3 => m_Wrapper.m_Cannons_Fire3;
+        public InputAction @FireLeft => m_Wrapper.m_Cannons_FireLeft;
+        public InputAction @FireCenter => m_Wrapper.m_Cannons_FireCenter;
+        public InputAction @FireRight => m_Wrapper.m_Cannons_FireRight;
         public InputActionMap Get() { return m_Wrapper.m_Cannons; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -296,28 +296,28 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_CannonsActionsCallbackInterface != null)
             {
-                @Fire1.started -= m_Wrapper.m_CannonsActionsCallbackInterface.OnFire1;
-                @Fire1.performed -= m_Wrapper.m_CannonsActionsCallbackInterface.OnFire1;
-                @Fire1.canceled -= m_Wrapper.m_CannonsActionsCallbackInterface.OnFire1;
-                @Fire2.started -= m_Wrapper.m_CannonsActionsCallbackInterface.OnFire2;
-                @Fire2.performed -= m_Wrapper.m_CannonsActionsCallbackInterface.OnFire2;
-                @Fire2.canceled -= m_Wrapper.m_CannonsActionsCallbackInterface.OnFire2;
-                @Fire3.started -= m_Wrapper.m_CannonsActionsCallbackInterface.OnFire3;
-                @Fire3.performed -= m_Wrapper.m_CannonsActionsCallbackInterface.OnFire3;
-                @Fire3.canceled -= m_Wrapper.m_CannonsActionsCallbackInterface.OnFire3;
+                @FireLeft.started -= m_Wrapper.m_CannonsActionsCallbackInterface.OnFireLeft;
+                @FireLeft.performed -= m_Wrapper.m_CannonsActionsCallbackInterface.OnFireLeft;
+                @FireLeft.canceled -= m_Wrapper.m_CannonsActionsCallbackInterface.OnFireLeft;
+                @FireCenter.started -= m_Wrapper.m_CannonsActionsCallbackInterface.OnFireCenter;
+                @FireCenter.performed -= m_Wrapper.m_CannonsActionsCallbackInterface.OnFireCenter;
+                @FireCenter.canceled -= m_Wrapper.m_CannonsActionsCallbackInterface.OnFireCenter;
+                @FireRight.started -= m_Wrapper.m_CannonsActionsCallbackInterface.OnFireRight;
+                @FireRight.performed -= m_Wrapper.m_CannonsActionsCallbackInterface.OnFireRight;
+                @FireRight.canceled -= m_Wrapper.m_CannonsActionsCallbackInterface.OnFireRight;
             }
             m_Wrapper.m_CannonsActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Fire1.started += instance.OnFire1;
-                @Fire1.performed += instance.OnFire1;
-                @Fire1.canceled += instance.OnFire1;
-                @Fire2.started += instance.OnFire2;
-                @Fire2.performed += instance.OnFire2;
-                @Fire2.canceled += instance.OnFire2;
-                @Fire3.started += instance.OnFire3;
-                @Fire3.performed += instance.OnFire3;
-                @Fire3.canceled += instance.OnFire3;
+                @FireLeft.started += instance.OnFireLeft;
+                @FireLeft.performed += instance.OnFireLeft;
+                @FireLeft.canceled += instance.OnFireLeft;
+                @FireCenter.started += instance.OnFireCenter;
+                @FireCenter.performed += instance.OnFireCenter;
+                @FireCenter.canceled += instance.OnFireCenter;
+                @FireRight.started += instance.OnFireRight;
+                @FireRight.performed += instance.OnFireRight;
+                @FireRight.canceled += instance.OnFireRight;
             }
         }
     }
@@ -357,9 +357,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     public CrosshairActions @Crosshair => new CrosshairActions(this);
     public interface ICannonsActions
     {
-        void OnFire1(InputAction.CallbackContext context);
-        void OnFire2(InputAction.CallbackContext context);
-        void OnFire3(InputAction.CallbackContext context);
+        void OnFireLeft(InputAction.CallbackContext context);
+        void OnFireCenter(InputAction.CallbackContext context);
+        void OnFireRight(InputAction.CallbackContext context);
     }
     public interface ICrosshairActions
     {
