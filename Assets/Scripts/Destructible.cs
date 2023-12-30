@@ -16,7 +16,8 @@ namespace MissileCommand
         private DestructionType destructionType;
 
         [Header("Events")]
-        public UnityEvent OnBeingDestroyed;
+        [SerializeField]
+        private UnityEvent onBeingDestroyed;
 
         private void OnTriggerEnter2D(Collider2D other)
         {

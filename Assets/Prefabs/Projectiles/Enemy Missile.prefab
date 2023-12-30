@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destructionType: 1
-  OnBeingDestroyed:
+  onBeingDestroyed:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3105712416431378526}
