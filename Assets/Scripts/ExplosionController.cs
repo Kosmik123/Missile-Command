@@ -8,10 +8,14 @@ namespace MissileCommand
         private new CircleCollider2D collider;
 
         [Header("Settings")]
-        [SerializeField] private Transform model;
-        [SerializeField] private AnimationCurve sizeChangeCurve;
-        [SerializeField] private float maxRadius;
-        [SerializeField] private float speed;
+        [SerializeField] 
+        private Transform model;
+        [SerializeField]
+        private AnimationCurve sizeChangeCurve;
+        [SerializeField]
+        private float maxRadius;
+        [SerializeField]
+        private float speed;
 
         private float progress = 0;
         private float radius;

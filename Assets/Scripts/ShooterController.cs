@@ -12,11 +12,16 @@ namespace MissileCommand
         public Transform Target { get => target; set => target = value; }
 
         [Header("Settings")]
-        [SerializeField] private Transform cannonModel;
-        [SerializeField] private bool canRotate3D;
-        [SerializeField] private float rocketSpeed;
-        [SerializeField] private InputAction shootAction;
-        [SerializeField] private int initialAmmunition;
+        [SerializeField] 
+        private Transform cannonModel;
+        [SerializeField] 
+        private bool canRotate3D;
+        [SerializeField] 
+        private float rocketSpeed;
+        [SerializeField]
+        private InputAction shootAction;
+        [SerializeField] 
+        private int initialAmmunition;
         
         [Header("States")]
         [SerializeField] private int ammunition;

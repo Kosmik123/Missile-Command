@@ -10,24 +10,32 @@ namespace MissileCommand
 
         [Header("Settings")]
         [Tooltip("Base for calculating overall missiles count that can be shot in a level")]
-        [SerializeField] private int baseMissileCount;
+        [SerializeField]
+        private int baseMissileCount;
 
         [Tooltip("Time between attack waves")]
-        [SerializeField] private float attackInterval;
+        [SerializeField] 
+        private float attackInterval;
         
         [Tooltip("Maximum count of missiles that can be shot in one attack wave")]
-        [SerializeField] private int maxMissileCount;
+        [SerializeField] 
+        private int maxMissileCount;
         
         [Tooltip("Height of rect in which missiles are spawned")]
-        [SerializeField] private float generationAreaHeight;
+        [SerializeField]
+        private float generationAreaHeight;
 
         [Header("Properties")]
-        [SerializeField] private Rect generationArea;
-        [SerializeField] private Transform[] possibleTargets;
-        [SerializeField] private int rocketsCount;
+        [SerializeField] 
+        private Rect generationArea;
+        [SerializeField]
+        private Transform[] possibleTargets;
+        [SerializeField]
+        private int rocketsCount;
 
         [Header("States")]
-        [SerializeField] private int remainingRockets;
+        [SerializeField]
+        private int remainingRockets;
 
         public IRectProvider rectProvider;
         private YieldInstruction wait;
@@ -54,7 +62,7 @@ namespace MissileCommand
             Vector3 position = new Vector3(
                 Random.Range(generationArea.xMin, generationArea.xMax),
                 Random.Range(generationArea.yMin, generationArea.yMax));
-            ProjectileInstantiator.InstantiateEnemyMissile(position, 1, targetPosition, transform);
+            ProjectileSpawner.InstantiateEnemyMissile(position, 1, targetPosition, transform);
             remainingRockets--;
         }
 

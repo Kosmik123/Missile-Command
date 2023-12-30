@@ -1,42 +1,46 @@
-using System;
-
 using UnityEngine;
 
 
 namespace MissileCommand
 {
-
     public class GameManager : MonoBehaviour
     {
         public static string enemyTag = "Enemy";
         public static string playerTag = "Player";
-        
-        public static GameManager Instance { get; private set; }
 
-        public static event Action<int> OnPointsChanged;
+        public static event System.Action<int> OnPointsChanged;
 
         [Header("To Link")]
-        [SerializeField] private new Camera camera;
-        [SerializeField] private CrosshairController crosshair;
-        [SerializeField] private EnemyManager enemyManager;
-        [SerializeField] private Transform citiesContainer;
-        [SerializeField] private Transform cannonsContainer;
+        [SerializeField] 
+        private new Camera camera;
+        [SerializeField]
+        private CrosshairController crosshair;
+        [SerializeField]
+        private EnemyManager enemyManager;
+        [SerializeField] 
+        private Transform citiesContainer;
+        [SerializeField] 
+        private Transform cannonsContainer;
 
         [Header("Settings")]
-        [SerializeField] private int baseRocketCount;
-
+        [SerializeField]
+        private int baseRocketCount;
+        [SerializeField]
+        private Material[] allSkyboxes;
+        
         [Header("Properties")]
-        [SerializeField] private int difficulty;
+        [SerializeField]
+        private int difficulty;
 
         [Header("States")]
-        [SerializeField] private int points;
+        [SerializeField] 
+        private int points;
 
         private ShooterController[] cannons;
         private Destructible[] cities;
 
         private void Awake()
         {
-            Instance = Singleton.MakeInstance(this, Instance);
             DontDestroyOnLoad(this);
             difficulty = 1;
             
@@ -56,6 +60,8 @@ namespace MissileCommand
 
         private void RestartGame()
         {
+            RandomizeSkybox();
+
             enemyManager.SetDifficulty(difficulty);
             enemyManager.Restart();
 
@@ -64,6 +70,12 @@ namespace MissileCommand
 
             foreach (var city in cities)
                 city.gameObject.SetActive(true);
+        }
+
+        private void RandomizeSkybox()
+        {
+            int randomIndex = Random.Range(0, allSkyboxes.Length);
+            RenderSettings.skybox = allSkyboxes[randomIndex];
         }
 
         public void AddPoints(int pointsBase)

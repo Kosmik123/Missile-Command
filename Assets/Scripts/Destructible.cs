@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,14 +6,14 @@ namespace MissileCommand
     [RequireComponent(typeof(Collider2D))]
     public class Destructible : MonoBehaviour
     {
-
         public enum DestructionType
         {
             DisableObject,
             DestroyObject
         }
 
-        [SerializeField] private DestructionType destructionType;
+        [SerializeField]
+        private DestructionType destructionType;
 
         [Header("Events")]
         public UnityEvent OnBeingDestroyed;
@@ -35,7 +33,7 @@ namespace MissileCommand
                     break;
             }
 
-            OnBeingDestroyed?.Invoke();
+            onBeingDestroyed?.Invoke();
         }
     }
 }

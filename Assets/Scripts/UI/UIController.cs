@@ -10,15 +10,20 @@ namespace MissileCommand.UI
         public static UIController Instance { get; private set; }
 
         [Header("Prefabs")]
-        [SerializeField] private GameObject cannonAmmoIndicator;
+        [SerializeField] 
+        private GameObject cannonAmmoIndicator;
 
         [Header("To link")]
-        [SerializeField] private Canvas worldCanvas;
+        [SerializeField] 
+        private Canvas worldCanvas;
 
-        [SerializeField] private RectTransform results;
+        [SerializeField] 
+        private RectTransform results;
 
-        [SerializeField] private TMP_Text pointsIndicator;
-        [SerializeField] private TMP_Text highscoreIndicator;
+        [SerializeField] 
+        private TMP_Text pointsIndicator;
+        [SerializeField] 
+        private TMP_Text highscoreIndicator;
 
 
 

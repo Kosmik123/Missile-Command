@@ -1,6 +1,4 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.InputSystem;
+﻿using UnityEngine;
 
 namespace MissileCommand
 {
@@ -12,8 +10,10 @@ namespace MissileCommand
         public IRectProvider rectProvider;
 
         [Header("Settings")]
-        [SerializeField] private float moveSpeed;
-        [SerializeField] private Rect movementArea;
+        [SerializeField]
+        private float moveSpeed;
+        [SerializeField] 
+        private Rect movementArea;
 
 
         //[Header("States")]
@@ -64,8 +64,6 @@ namespace MissileCommand
             Gizmos.color = Color.green;
             Gizmos.DrawWireCube(movementArea.center, movementArea.size);
         }
-
-
 #endif
     }
 }
