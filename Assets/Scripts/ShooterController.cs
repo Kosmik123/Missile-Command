@@ -19,7 +19,7 @@ namespace MissileCommand
         [SerializeField] 
         private float rocketSpeed;
         [SerializeField]
-        private InputAction shootAction;
+        private InputActionReference shootInput;
         [SerializeField] 
         private int initialAmmunition;
         
@@ -28,8 +28,8 @@ namespace MissileCommand
 
         private void OnEnable()
         {
-            shootAction.Enable();
-            shootAction.performed += DoShoot;
+            shootInput.action.Enable();
+            shootInput.action.performed += DoShoot;
             SetAmmunition(initialAmmunition);
         }
 
@@ -77,8 +77,8 @@ namespace MissileCommand
         private void OnDisable()
         {
             SetAmmunition(0); 
-            shootAction.Disable();
-            shootAction.performed -= DoShoot;
+            shootInput.action.performed -= DoShoot;
+            shootInput.action.Disable();
         }
     }
 }
