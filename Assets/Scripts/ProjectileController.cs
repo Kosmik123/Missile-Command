@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,6 +5,8 @@ namespace MissileCommand
 {
     public class ProjectileController : MonoBehaviour
     {
+        public event System.Action OnTargetReached;
+
         [Header("Settings")]
         [SerializeField] 
         private float speed;
@@ -19,28 +20,25 @@ namespace MissileCommand
             set => targetPosition = value;
         }
 
-        [Header("States")]
-        [SerializeField] 
-        private Vector3 velocity;
-        [SerializeField]
-        private float progress;
-
         [Header("Events")]
-        public UnityEvent OnTargetReach;
+        [SerializeField]
+        private UnityEvent OnTargetReach;
 
         void Update()
         {
             float movement = speed * Time.deltaTime;
 
             Vector3 notNormalizedDirection = targetPosition - transform.position;
-            if (notNormalizedDirection.magnitude < movement)
+            if (notNormalizedDirection.sqrMagnitude < movement * movement)
             {
                 transform.position = targetPosition;
-                OnTargetReach?.Invoke();
+                OnTargetReach.Invoke();
+                OnTargetReached?.Invoke();
             }
             else
+            {
                 transform.position += movement * notNormalizedDirection.normalized;
-        
+            }
         }
     }
 }

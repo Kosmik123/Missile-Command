@@ -8,8 +8,6 @@ namespace MissileCommand
         public static string enemyTag = "Enemy";
         public static string playerTag = "Player";
 
-        public static event System.Action<int> OnPointsChanged;
-
         [Header("To Link")]
         [SerializeField] 
         private new Camera camera;
@@ -21,6 +19,8 @@ namespace MissileCommand
         private Transform citiesContainer;
         [SerializeField] 
         private Transform cannonsContainer;
+        [SerializeField]
+        private PointsData pointsData;
 
         [Header("Settings")]
         [SerializeField]
@@ -78,16 +78,5 @@ namespace MissileCommand
             RenderSettings.skybox = allSkyboxes[randomIndex];
             DynamicGI.UpdateEnvironment();
         }
-
-        public void AddPoints(int pointsBase)
-        {
-            if (pointsBase < 0)
-                return;
-
-            points += difficulty * pointsBase;
-            OnPointsChanged?.Invoke(points);
-        }
-
-
     } 
 }

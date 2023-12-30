@@ -1935,6 +1935,7 @@ GameObject:
   - component: {fileID: 1583725799}
   - component: {fileID: 1583725800}
   - component: {fileID: 1583725801}
+  - component: {fileID: 1583725802}
   m_Layer: 0
   m_Name: GAME MANAGER
   m_TagString: Untagged
@@ -1974,6 +1975,7 @@ MonoBehaviour:
   enemyManager: {fileID: 1262477439}
   citiesContainer: {fileID: 1872013941}
   cannonsContainer: {fileID: 1453849258}
+  pointsData: {fileID: 1583725802}
   baseRocketCount: 0
   allSkyboxes:
   - {fileID: 2100000, guid: 12ccb828343c3405fb94289774b51aad, type: 2}
@@ -2042,6 +2044,19 @@ MonoBehaviour:
     type: 3}
   explosionPrefab: {fileID: 3620675942346281697, guid: bfd6905d4409ba24491fe86f6b3ca620,
     type: 3}
+--- !u!114 &1583725802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583725798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f14b4d99d08623499f8673956de9b25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 0
 --- !u!4 &1803271838 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6791477127743275812, guid: 6a61040a302d1714689707d81e98b899,

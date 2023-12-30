@@ -34,7 +34,7 @@ namespace MissileCommand.UI
 
         private void OnEnable()
         {
-            GameManager.OnPointsChanged += RefreshPoints;
+            PointsData.OnPointsChanged += RefreshPoints;
             EnemyManager.OnRocketsEnded += ShowResults;
         }
 
@@ -67,7 +67,7 @@ namespace MissileCommand.UI
 
         private void OnDisable()
         {
-            GameManager.OnPointsChanged -= RefreshPoints;
+            PointsData.OnPointsChanged -= RefreshPoints;
             EnemyManager.OnRocketsEnded -= ShowResults;
         }
     }

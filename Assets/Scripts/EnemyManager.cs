@@ -63,7 +63,6 @@ namespace MissileCommand
             remainingRocketsCount--;
         }
 
-
         private IEnumerator DropMissilesCo()
         {
             while (remainingRocketsCount > 0)

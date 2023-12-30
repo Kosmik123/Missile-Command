@@ -1,7 +1,7 @@
 using UnityEngine;
 
-namespace MissileCommand {
-
+namespace MissileCommand
+{
     public class PointsValue : MonoBehaviour
     {
         [SerializeField]
@@ -10,7 +10,7 @@ namespace MissileCommand {
         public void AddPoints()
         {
             Debug.Log("Costam");
-            //GameManager.Instance.AddPoints(value);
+            PointsData.Instance.AddPoints(value);
         }
     }
 }
