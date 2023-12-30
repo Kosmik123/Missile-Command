@@ -76,6 +76,7 @@ namespace MissileCommand
         {
             int randomIndex = Random.Range(0, allSkyboxes.Length);
             RenderSettings.skybox = allSkyboxes[randomIndex];
+            DynamicGI.UpdateEnvironment();
         }
 
         public void AddPoints(int pointsBase)
