@@ -9,7 +9,8 @@ namespace MissileCommand {
 
         public void AddPoints()
         {
-            GameManager.Instance.AddPoints(value);
+            Debug.Log("CO�tam");
+            //GameManager.Instance.AddPoints(value);
         }
     }
 }
