@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace MissileCommand
 {
-
     public class CrosshairController : MonoBehaviour
     {
-        private Controls input;
-
         public IRectProvider rectProvider;
 
         [Header("Settings")]
+        [SerializeField]
+        private InputActionReference crosshairAimingInput;
         [SerializeField]
         private float moveSpeed;
         [SerializeField] 
@@ -19,15 +19,9 @@ namespace MissileCommand
         //[Header("States")]
         private Vector3 move;
 
-
-        private void Awake()
-        {
-            input = new Controls();
-        }
-
         private void OnEnable()
         {
-            input.Crosshair.Enable();
+            crosshairAimingInput.action.Enable();
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
@@ -39,8 +33,7 @@ namespace MissileCommand
 
         private void Update()
         {
-            move = input.Crosshair.Aiming.ReadValue<Vector2>();
-
+            move = crosshairAimingInput.action.ReadValue<Vector2>();
             UpdateMovement();
         }
 
@@ -55,7 +48,7 @@ namespace MissileCommand
 
         private void OnDisable()
         {
-            input.Crosshair.Disable();
+            crosshairAimingInput.action.Disable();
         }
 
 #if UNITY_EDITOR
