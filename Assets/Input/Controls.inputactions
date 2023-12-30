@@ -47,6 +47,17 @@
                 },
                 {
                     "name": "",
+                    "id": "88a751f5-a11d-4cc6-ac8f-6b1192fb85e0",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire 1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "3f3f028d-f790-4094-8001-f0b1e89308e7",
                     "path": "<Keyboard>/x",
                     "interactions": "",
@@ -61,6 +72,28 @@
                     "id": "0f9790aa-18ea-4cb6-a424-2a16ea6d9493",
                     "path": "<Keyboard>/c",
                     "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire 3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "443b5df8-baa0-4b95-8846-1f5a23035e8b",
+                    "path": "<Mouse>/middleButton",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire 2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1f65a07a-2ecd-4b1e-88ee-0d1a6f891a84",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "Press(behavior=1)",
                     "processors": "",
                     "groups": "",
                     "action": "Fire 3",
