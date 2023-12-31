@@ -10,19 +10,21 @@ namespace MissileCommand
         [Header("Settings")]
         [SerializeField] 
         private float speed;
-        public float Speed { get => speed; set => speed = value; }
+        public float Speed => speed; 
 
         [SerializeField]
         private Vector3 targetPosition;
-        public Vector3 TargetPosition
-        { 
-            get => targetPosition; 
-            set => targetPosition = value;
-        }
+        public Vector3 TargetPosition => targetPosition;
 
         [Header("Events")]
         [SerializeField]
         private UnityEvent OnTargetReach;
+
+        public void Init(float speed, Vector3 target)
+        {
+            this.speed = speed; 
+            targetPosition = target;
+        }
 
         void Update()
         {

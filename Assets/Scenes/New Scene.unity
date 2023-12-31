@@ -2057,6 +2057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 0
+  multiplier: 1
 --- !u!4 &1803271838 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6791477127743275812, guid: 6a61040a302d1714689707d81e98b899,
