@@ -24,7 +24,9 @@ namespace MissileCommand
         private int initialAmmunition;
         
         [Header("States")]
-        [SerializeField] private int ammunition;
+        [SerializeField] 
+        private int ammunition;
+        public int Ammunition => ammunition;
 
         private void OnEnable()
         {
@@ -33,9 +35,8 @@ namespace MissileCommand
             SetAmmunition(initialAmmunition);
         }
 
-        public void Init()
+        public void RefillAmmo()
         {
-            Debug.Log($"Shooter start. New ammo = {initialAmmunition}");
             SetAmmunition(initialAmmunition);
         }
 
@@ -68,7 +69,7 @@ namespace MissileCommand
         }
 
 
-        private void SetAmmunition(int newValue)
+        public void SetAmmunition(int newValue)
         {
             ammunition = newValue;
             OnAmmunitionChanged?.Invoke(ammunition);

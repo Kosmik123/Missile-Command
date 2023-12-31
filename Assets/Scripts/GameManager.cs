@@ -70,8 +70,10 @@ namespace MissileCommand
             enemyManager.Restart();
 
             foreach (var cannon in cannons)
+            {
                 cannon.gameObject.SetActive(true);
-
+                cannon.RefillAmmo();
+            }
             foreach (var city in cities)
                 city.gameObject.SetActive(true);
         }
