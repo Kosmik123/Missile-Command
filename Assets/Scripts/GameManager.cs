@@ -9,8 +9,6 @@ namespace MissileCommand
         public static string playerTag = "Player";
 
         [Header("To Link")]
-        [SerializeField] 
-        private new Camera camera;
         [SerializeField]
         private CrosshairController crosshair;
         [SerializeField]
@@ -32,19 +30,13 @@ namespace MissileCommand
         [SerializeField]
         private int difficulty;
 
-        [Header("States")]
-        [SerializeField] 
-        private int points;
-
         private ShooterController[] cannons;
         private Destructible[] cities;
 
         private void Awake()
         {
             difficulty = 1;
-            
-            crosshair.rectProvider = enemyManager.rectProvider = camera.GetComponent<CameraRectProvider>();
-
+            crosshair.rectProvider = enemyManager.rectProvider = Camera.main.GetComponent<CameraRectProvider>();
             cannons = cannonsContainer.GetComponentsInChildren<ShooterController>();
             cities = citiesContainer.GetComponentsInChildren<Destructible>();
 

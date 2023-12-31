@@ -51,9 +51,7 @@ namespace MissileCommand
         {
             var rocket = Instantiate(prefab, position, Quaternion.AngleAxis(angle, Vector3.forward), parent);
             rocket.tag = tag;
-
             rocket.Init(speed, finalPosition);
-
             return rocket;
         }
 
