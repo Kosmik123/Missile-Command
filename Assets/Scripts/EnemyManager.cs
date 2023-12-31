@@ -65,7 +65,7 @@ namespace MissileCommand
             Vector3 position = new Vector3(
                 Random.Range(generationArea.xMin, generationArea.xMax),
                 Random.Range(generationArea.yMin, generationArea.yMax));
-            ProjectileSpawner.InstantiateEnemyMissile(position, 1, targetPosition, transform);
+            ProjectileSpawner.InstantiateEnemyMissile(position, Random.Range(0.9f, 1.1f), targetPosition, transform);
             remainingRocketsCount--;
         }
 
