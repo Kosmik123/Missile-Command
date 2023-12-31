@@ -133,7 +133,7 @@
                     "id": "f40c016f-cf80-4c52-9c0a-4a2d7c790406",
                     "path": "2DVector",
                     "interactions": "",
-                    "processors": "ScaleVector2(x=5,y=5)",
+                    "processors": "ScaleVector2(x=3,y=3)",
                     "groups": "",
                     "action": "Aiming",
                     "isComposite": true,
