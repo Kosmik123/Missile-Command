@@ -7,8 +7,6 @@ namespace MissileCommand.UI
 {
     public class UIController : MonoBehaviour
     {
-        public static UIController Instance { get; private set; }
-
         [Header("Prefabs")]
         [SerializeField] 
         private GameObject cannonAmmoIndicator;
@@ -28,18 +26,6 @@ namespace MissileCommand.UI
         private TMP_Text pointsIndicator;
         [SerializeField] 
         private TMP_Text highscoreIndicator;
-
-        private void Awake()
-        {
-            if (Instance == null)
-            {
-                Instance = this;
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-        }
 
         private void OnEnable()
         {
@@ -76,12 +62,6 @@ namespace MissileCommand.UI
         private void OnDisable()
         {
             PointsData.OnPointsChanged -= RefreshPoints;
-        }
-
-        private void OnDestroy()
-        {
-            if (Instance == this)
-                Instance = null;
         }
     }
 }
