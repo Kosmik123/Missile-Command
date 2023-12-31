@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Runtime.CompilerServices;
+using UnityEngine;
 
 namespace MissileCommand
 {
@@ -7,8 +8,6 @@ namespace MissileCommand
         public void Explode()
         {
             ProjectileSpawner.InstantiateExplosion(transform.position, gameObject.tag);
-            Destroy(gameObject);
         }
     }
-
 }
