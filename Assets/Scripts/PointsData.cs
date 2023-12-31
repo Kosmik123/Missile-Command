@@ -22,12 +22,23 @@ namespace MissileCommand
                 Destroy(Instance.gameObject);
         }
 
+        public void ResetPoints()
+        {
+            ChangePoints(int.MinValue);
+        }
+
         public void AddPoints(int pointsBase)
         {
             if (pointsBase < 0)
                 return;
 
-            points += multiplier * pointsBase;
+            ChangePoints(multiplier * pointsBase);
+        }
+
+        private void ChangePoints(int pointsChange)
+        {
+            points += pointsChange;
+            points = Mathf.Max(points, 0);
             OnPointsChanged?.Invoke(points);
         }
 

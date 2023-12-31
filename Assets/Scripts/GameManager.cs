@@ -60,6 +60,7 @@ namespace MissileCommand
 
             enemyManager.SetDifficulty(difficulty);
             enemyManager.Restart();
+            pointsData.ResetPoints();
 
             foreach (var cannon in cannons)
             {
@@ -67,11 +68,14 @@ namespace MissileCommand
                 cannon.RefillAmmo();
             }
             foreach (var city in cities)
+            {
                 city.gameObject.SetActive(true);
+            }
         }
 
         private void EnemyManager_OnRocketsEnded()
         {
+            RestartGame();
         }
 
         private void RandomizeSkybox()
