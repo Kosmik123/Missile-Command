@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 5821612949860660618}
   - component: {fileID: 3365073571534981089}
   - component: {fileID: 3318463736878894433}
+  - component: {fileID: 3647187675338632394}
   m_Layer: 9
   m_Name: City
   m_TagString: Building
@@ -153,6 +154,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 5607797419306879479}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2241283f69fd9174f8b0e8a6f382151b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3318463736878894433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5607797419306879479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf7e1838357f1924f8eba7d18cc7a4b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3647187675338632394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5607797419306879479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1909281b5c851cb47a0eef649af6a64c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -172,15 +197,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3318463736878894433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5607797419306879479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf7e1838357f1924f8eba7d18cc7a4b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

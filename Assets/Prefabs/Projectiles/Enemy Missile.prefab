@@ -7,6 +7,76 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1158121339932898981, guid: db2717304c929d0418d050c6ae7d876e,
+        type: 3}
+      propertyPath: destructionType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158121339932898981, guid: db2717304c929d0418d050c6ae7d876e,
+        type: 3}
+      propertyPath: onBeingDestroyed.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158121339932898981, guid: db2717304c929d0418d050c6ae7d876e,
+        type: 3}
+      propertyPath: onBeingDestroyed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158121339932898981, guid: db2717304c929d0418d050c6ae7d876e,
+        type: 3}
+      propertyPath: onBeingDestroyed.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158121339932898981, guid: db2717304c929d0418d050c6ae7d876e,
+        type: 3}
+      propertyPath: onBeingDestroyed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3105712416431378526}
+    - target: {fileID: 1158121339932898981, guid: db2717304c929d0418d050c6ae7d876e,
+        type: 3}
+      propertyPath: onBeingDestroyed.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 499566449707795899}
+    - target: {fileID: 1158121339932898981, guid: db2717304c929d0418d050c6ae7d876e,
+        type: 3}
+      propertyPath: onBeingDestroyed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158121339932898981, guid: db2717304c929d0418d050c6ae7d876e,
+        type: 3}
+      propertyPath: onBeingDestroyed.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158121339932898981, guid: db2717304c929d0418d050c6ae7d876e,
+        type: 3}
+      propertyPath: onBeingDestroyed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddPoints
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158121339932898981, guid: db2717304c929d0418d050c6ae7d876e,
+        type: 3}
+      propertyPath: onBeingDestroyed.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Explode
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158121339932898981, guid: db2717304c929d0418d050c6ae7d876e,
+        type: 3}
+      propertyPath: onBeingDestroyed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MissileCommand.PointsValue, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158121339932898981, guid: db2717304c929d0418d050c6ae7d876e,
+        type: 3}
+      propertyPath: onBeingDestroyed.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MissileCommand.ExplodeAtPosition, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158121339932898981, guid: db2717304c929d0418d050c6ae7d876e,
+        type: 3}
+      propertyPath: onBeingDestroyed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158121339932898981, guid: db2717304c929d0418d050c6ae7d876e,
+        type: 3}
+      propertyPath: onBeingDestroyed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1408020982819029203, guid: db2717304c929d0418d050c6ae7d876e,
         type: 3}
       propertyPath: m_Layer
@@ -50,12 +120,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5918304977348418329, guid: db2717304c929d0418d050c6ae7d876e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: db2717304c929d0418d050c6ae7d876e, type: 3}
---- !u!1 &3814377487392842982 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1676822389284066529, guid: db2717304c929d0418d050c6ae7d876e,
-    type: 3}
-  m_PrefabInstance: {fileID: 2569902862993649671}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &499566449707795899 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2685535176707519932, guid: db2717304c929d0418d050c6ae7d876e,
@@ -68,6 +132,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf7e1838357f1924f8eba7d18cc7a4b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3814377487392842982 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1676822389284066529, guid: db2717304c929d0418d050c6ae7d876e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2569902862993649671}
+  m_PrefabAsset: {fileID: 0}
 --- !u!70 &7667590643034450730
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -84,46 +154,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.25, y: 0.8}
   m_Direction: 0
---- !u!114 &714924321626219640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3814377487392842982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1909281b5c851cb47a0eef649af6a64c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destructionType: 1
-  onBeingDestroyed:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3105712416431378526}
-        m_TargetAssemblyTypeName: MissileCommand.PointsValue, Assembly-CSharp
-        m_MethodName: AddPoints
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 499566449707795899}
-        m_TargetAssemblyTypeName: MissileCommand.ExplodeAtPosition, Assembly-CSharp
-        m_MethodName: Explode
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &3105712416431378526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,3 +167,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 25
+--- !u!114 &8173409213236138928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3814377487392842982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2241283f69fd9174f8b0e8a6f382151b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

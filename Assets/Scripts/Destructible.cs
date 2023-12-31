@@ -3,7 +3,6 @@ using UnityEngine.Events;
 
 namespace MissileCommand
 {
-    [RequireComponent(typeof(Collider2D))]
     public class Destructible : MonoBehaviour
     {
         public enum DestructionType
@@ -19,11 +18,8 @@ namespace MissileCommand
         [SerializeField]
         private UnityEvent onBeingDestroyed;
 
-        private void OnTriggerEnter2D(Collider2D other)
+        public void Destroy()
         {
-            if (other.CompareTag("Building"))
-                return;
-
             switch (destructionType)
             {
                 case DestructionType.DisableObject:
