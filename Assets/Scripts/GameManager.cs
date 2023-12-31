@@ -41,7 +41,6 @@ namespace MissileCommand
 
         private void Awake()
         {
-            DontDestroyOnLoad(this);
             difficulty = 1;
             
             crosshair.rectProvider = enemyManager.rectProvider = camera.GetComponent<CameraRectProvider>();
