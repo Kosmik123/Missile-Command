@@ -8,7 +8,6 @@ namespace MissileCommand.UI
     public class AmmoIndicatorController : MonoBehaviour
     {
         private ShooterController shooter;
-        public ShooterController Shooter { get => shooter; set => shooter = value; }
 
         [Header("Prefabs")]
         [SerializeField] private GameObject ammoSymbolPrefab;
@@ -31,13 +30,18 @@ namespace MissileCommand.UI
 
         private void OnEnable()
         {
-            if (shooter != null)
-                Init();
+            shooter.OnAmmunitionChanged -= Refresh;
+            shooter.OnAmmunitionChanged += Refresh;
+            Refresh(shooter.Ammunition);
         }
 
-        public void Init()
+
+        public void Init(ShooterController shooter)
         {
+            this.shooter = shooter;
+            shooter.OnAmmunitionChanged -= Refresh;
             shooter.OnAmmunitionChanged += Refresh;
+            Refresh(shooter.Ammunition);
         }
 
         public void Refresh(int count)
@@ -104,6 +108,5 @@ namespace MissileCommand.UI
         {
             shooter.OnAmmunitionChanged -= Refresh;
         }
-
     }
 }

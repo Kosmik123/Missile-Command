@@ -16,6 +16,10 @@ namespace MissileCommand.UI
         [Header("To link")]
         [SerializeField] 
         private Canvas worldCanvas;
+        [SerializeField]
+        private EnemyManager enemyManager;
+        [SerializeField]
+        private CannonsManager cannonsManager;
 
         [SerializeField] 
         private RectTransform results;
@@ -42,9 +46,12 @@ namespace MissileCommand.UI
             PointsData.OnPointsChanged += RefreshPoints;
         }
 
-        private void ShowResults()
+        private void Start()
         {
-            
+            foreach (var shooter in cannonsManager.Cannons) 
+            {
+                InstantiateCannonAmmoIndicator(shooter);
+            }
         }
 
         private void RefreshPoints(int points)
@@ -52,14 +59,13 @@ namespace MissileCommand.UI
             pointsIndicator.text = points.ToString();
         }
 
-        public void InstantiateCannonAmmoIndicator(ShooterController shooterController)
+        private void InstantiateCannonAmmoIndicator(ShooterController shooterController)
         {
             var obj = Instantiate(cannonAmmoIndicator, worldCanvas.transform);
             obj.transform.position = shooterController.transform.position;
 
             var indicator = obj.GetComponent<AmmoIndicatorController>();
-            indicator.Shooter = shooterController;
-            indicator.Init();
+            indicator.Init(shooterController);
         }
 
         private void RefreshHighscore(int highscore)
