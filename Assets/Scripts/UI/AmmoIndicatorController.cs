@@ -30,11 +30,13 @@ namespace MissileCommand.UI
 
         private void OnEnable()
         {
-            shooter.OnAmmunitionChanged -= Refresh;
-            shooter.OnAmmunitionChanged += Refresh;
-            Refresh(shooter.Ammunition);
+            if (shooter)
+            {
+                shooter.OnAmmunitionChanged -= Refresh;
+                shooter.OnAmmunitionChanged += Refresh;
+                Refresh(shooter.Ammunition);
+            }
         }
-
 
         public void Init(ShooterController shooter)
         {
