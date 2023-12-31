@@ -2057,6 +2057,7 @@ MonoBehaviour:
     type: 3}
   explosionPrefab: {fileID: 3620675942346281697, guid: bfd6905d4409ba24491fe86f6b3ca620,
     type: 3}
+  explosionsContainer: {fileID: 1262477440}
 --- !u!114 &1583725802
 MonoBehaviour:
   m_ObjectHideFlags: 0

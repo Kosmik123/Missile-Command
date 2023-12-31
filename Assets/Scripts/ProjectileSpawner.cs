@@ -13,6 +13,8 @@ namespace MissileCommand
         private ProjectileController enemyRocketPrefab;
         [SerializeField]
         private ExplosionController explosionPrefab;
+        [SerializeField]
+        private Transform explosionsContainer;
 
         private void Awake()
         {
@@ -29,7 +31,7 @@ namespace MissileCommand
 
         public static void InstantiateExplosion(Vector3 position, string tag = "Default")
         {
-            var obj = Instantiate(Instance.explosionPrefab);
+            var obj = Instantiate(Instance.explosionPrefab, Instance.explosionsContainer);
             obj.transform.position = position;
             obj.tag = tag;
         }
