@@ -3,7 +3,13 @@ guid: 257b61f836746034b802f6da2ca8e0dc
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playerRocketPrefab: {fileID: 1268833721239579131, guid: db2717304c929d0418d050c6ae7d876e,
+      type: 3}
+  - enemyRocketPrefab: {fileID: 3616932034791561724, guid: 28bac9671c33f7545b2488bf4bc571a1,
+      type: 3}
+  - explosionPrefab: {fileID: 3620675942346281697, guid: bfd6905d4409ba24491fe86f6b3ca620,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -27,6 +27,8 @@ namespace MissileCommand
         private void Start()
         {
             movementArea = rectProvider.GetRect();
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         private void Update()

@@ -1465,6 +1465,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3775013052658531585}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1356635960 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5542652558219590255, guid: 6a61040a302d1714689707d81e98b899,
+    type: 3}
+  m_PrefabInstance: {fileID: 3775013052658531585}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d22fe8464b15a46479df7cee8318c0c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1375049093
 GameObject:
   m_ObjectHideFlags: 0
@@ -1740,7 +1752,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 877815674db6a6546adb2153e895fa53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cannons: []
+  cannons:
+  - {fileID: 1356635960}
+  - {fileID: 1803271842}
+  - {fileID: 2072347179}
 --- !u!1 &1486114446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1937,7 +1952,7 @@ GameObject:
   - component: {fileID: 1583725801}
   - component: {fileID: 1583725802}
   m_Layer: 0
-  m_Name: GAME MANAGER
+  m_Name: Game Manager
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1970,7 +1985,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ba792f9102195c4b9f9e632ee30eef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 501527175}
   crosshair: {fileID: 29541132}
   enemyManager: {fileID: 1262477439}
   citiesContainer: {fileID: 1872013941}
@@ -2025,7 +2039,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 39d27e80110a983468075fd1868610d7, type: 2}
   - {fileID: 2100000, guid: aed657681c6812845bb7736c343b5e9b, type: 2}
   difficulty: 1
-  points: 0
 --- !u!114 &1583725801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2064,6 +2077,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 994782055}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1803271842 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5542652558219590255, guid: 6a61040a302d1714689707d81e98b899,
+    type: 3}
+  m_PrefabInstance: {fileID: 994782055}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d22fe8464b15a46479df7cee8318c0c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1872013940
 GameObject:
   m_ObjectHideFlags: 0
@@ -2151,6 +2176,8 @@ MonoBehaviour:
   cannonAmmoIndicator: {fileID: 8907708845007461302, guid: c026281c906ba1a4cb5b6384362d9329,
     type: 3}
   worldCanvas: {fileID: 1391404274}
+  enemyManager: {fileID: 1262477439}
+  cannonsManager: {fileID: 1453849259}
   results: {fileID: 601263764}
   pointsIndicator: {fileID: 354923469}
   highscoreIndicator: {fileID: 170175033}
@@ -2160,6 +2187,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2146298504}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2072347179 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5542652558219590255, guid: 6a61040a302d1714689707d81e98b899,
+    type: 3}
+  m_PrefabInstance: {fileID: 518783117}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d22fe8464b15a46479df7cee8318c0c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2118077172
 GameObject:
   m_ObjectHideFlags: 0
