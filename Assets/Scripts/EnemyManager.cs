@@ -5,7 +5,7 @@ namespace MissileCommand
 {
     public class EnemyManager : MonoBehaviour
     {
-        public static event System.Action OnRocketsEnded;
+        public event System.Action OnRocketsEnded;
 
         [Header("Settings")]
         [Tooltip("Base for calculating overall missiles count that can be shot in a level")]
@@ -37,6 +37,7 @@ namespace MissileCommand
         public IRectProvider rectProvider;
         private YieldInstruction wait;
 
+        [ContextMenu("Restart")]
         public void Restart()
         {
             Rect gameplayRect = rectProvider.GetRect();

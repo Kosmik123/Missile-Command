@@ -52,6 +52,11 @@ namespace MissileCommand
                 cannon.Target = crosshair.transform;
         }
 
+        private void OnEnable()
+        {
+            enemyManager.OnRocketsEnded += EnemyManager_OnRocketsEnded;
+        }
+
         private void Start()
         {
             RestartGame();
@@ -71,11 +76,20 @@ namespace MissileCommand
                 city.gameObject.SetActive(true);
         }
 
+        private void EnemyManager_OnRocketsEnded()
+        {
+        }
+
         private void RandomizeSkybox()
         {
             int randomIndex = Random.Range(0, allSkyboxes.Length);
             RenderSettings.skybox = allSkyboxes[randomIndex];
             DynamicGI.UpdateEnvironment();
+        }
+
+        private void OnDisable()
+        {
+            enemyManager.OnRocketsEnded -= EnemyManager_OnRocketsEnded;
         }
     } 
 }
