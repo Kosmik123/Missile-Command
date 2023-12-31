@@ -16,8 +16,16 @@ namespace MissileCommand
 
         private void Awake()
         {
-            Instance = Singleton.MakeInstance(this, Instance);
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
+
 
         public static void InstantiateExplosion(Vector3 position, string tag = "Default")
         {
@@ -57,5 +65,10 @@ namespace MissileCommand
             return angle;
         }
 
+        private void OnDestroy()
+        {
+            if (Instance == this)
+                Instance = null;
+        }
     }
 }

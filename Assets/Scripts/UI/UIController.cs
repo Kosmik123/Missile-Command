@@ -25,11 +25,16 @@ namespace MissileCommand.UI
         [SerializeField] 
         private TMP_Text highscoreIndicator;
 
-
-
         private void Awake()
         {
-            Instance = Singleton.MakeInstance(this, Instance);
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
 
         private void OnEnable()
@@ -58,8 +63,6 @@ namespace MissileCommand.UI
             indicator.Init();
         }
 
-
-
         private void RefreshHighscore(int highscore)
         {
             highscoreIndicator.text = highscore.ToString();
@@ -69,6 +72,12 @@ namespace MissileCommand.UI
         {
             PointsData.OnPointsChanged -= RefreshPoints;
             EnemyManager.OnRocketsEnded -= ShowResults;
+        }
+
+        private void OnDestroy()
+        {
+            if (Instance == this)
+                Instance = null;
         }
     }
 }
