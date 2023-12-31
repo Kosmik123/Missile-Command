@@ -8,12 +8,15 @@ namespace MissileCommand
         public event System.Action OnRocketsEnded;
 
         [Header("Settings")]
-        [Tooltip("Base for calculating overall missiles count that can be shot in a level")]
-        [SerializeField]
+        [SerializeField, Tooltip("Base for calculating overall missiles count that can be shot in a level")]
         private int baseMissileCount;
+        public int BaseMissileCount 
+        { 
+            get => baseMissileCount; 
+            set => baseMissileCount = value; 
+        }
 
-        [Tooltip("Time between attack waves")]
-        [SerializeField] 
+        [SerializeField, Tooltip("Time between attack waves")]
         private float attackInterval;
         
         [SerializeField, Tooltip("Maximum count of missiles that can be shot in one attack wave")]
@@ -37,6 +40,7 @@ namespace MissileCommand
         public IRectProvider rectProvider;
         private YieldInstruction wait;
 
+
         [ContextMenu("Restart")]
         public void Restart()
         {
@@ -46,7 +50,8 @@ namespace MissileCommand
             wait = new WaitForSeconds(attackInterval);
 
             remainingRocketsCount = rocketsCount;
-            StartCoroutine(nameof(DropMissilesCo));
+            StopAllCoroutines();
+            StartCoroutine(DropMissilesCo());
         }
 
         public void SetDifficulty(int difficulty)
@@ -68,7 +73,7 @@ namespace MissileCommand
         {
             while (remainingRocketsCount > 0)
             {
-                for (int i = 0; i < Random.Range(1, maxMissileCount); i++)
+                for (int i = 0; i < Random.Range(1, maxMissileCount + 1); i++)
                     DropMissile();
 
                 yield return wait;

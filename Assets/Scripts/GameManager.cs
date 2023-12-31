@@ -60,7 +60,7 @@ namespace MissileCommand
 
             enemyManager.SetDifficulty(difficulty);
             enemyManager.Restart();
-            pointsData.ResetPoints();
+            //pointsData.ResetPoints();
 
             foreach (var cannon in cannons)
             {
@@ -75,6 +75,7 @@ namespace MissileCommand
 
         private void EnemyManager_OnRocketsEnded()
         {
+            enemyManager.BaseMissileCount++;
             RestartGame();
         }
 
