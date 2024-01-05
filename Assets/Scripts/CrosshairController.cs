@@ -17,33 +17,70 @@ namespace MissileCommand
         //[Header("States")]
         private Vector3 move;
 
+        [SerializeField]
+        private Camera _camera;
+        public Camera Camera
+        {
+            get
+            {
+                if (_camera == null)
+                    _camera = Camera.main;
+                return _camera;
+            }
+        }
+
         private void OnEnable()
         {
             crosshairAimingInput.action.Enable();
             Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.lockState = CursorLockMode.Confined;
         }
 
         private void Start()
         {
             movementArea = rectProvider.GetRect();
+            transform.position = Vector3.zero;
             Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.lockState = CursorLockMode.Confined;
         }
 
         private void Update()
         {
+            if (Mouse.current.delta.ReadValue().sqrMagnitude > 0.01f)
+                UpdatePositionWithCursorPosition();
+
             move = crosshairAimingInput.action.ReadValue<Vector2>();
-            UpdateMovement();
+            if (move.sqrMagnitude > 0.01f)
+                UpdateFramerateDependentMovement();
         }
 
-        private void UpdateMovement()
+        private void UpdatePositionWithCursorPosition()
+        {
+            var mousePosition = Mouse.current.position.ReadValue();
+            var position = Camera.ScreenToWorldPoint(mousePosition);
+            position.z = 0;
+            transform.position = position;
+        }
+
+        private void UpdateFramerateDependentMovement()
         {
             Vector3 position = transform.position;
+
             position += moveSpeed * Time.deltaTime * move;
             position.x = Mathf.Clamp(position.x, movementArea.xMin, movementArea.xMax);
             position.y = Mathf.Clamp(position.y, movementArea.yMin, movementArea.yMax);
             transform.position = position;
+            Mouse.current.WarpCursorPosition(Camera.WorldToScreenPoint(position));
+        }
+
+        private void OnApplicationFocus(bool focus)
+        {
+            if (focus)
+            {
+                UpdatePositionWithCursorPosition();
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Confined;
+            }
         }
 
         private void OnDisable()

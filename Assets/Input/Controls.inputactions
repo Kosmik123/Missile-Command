@@ -118,17 +118,6 @@
             ],
             "bindings": [
                 {
-                    "name": "",
-                    "id": "578be764-f08d-451f-84e1-6c3d44f43470",
-                    "path": "<Mouse>/delta",
-                    "interactions": "",
-                    "processors": "ScaleVector2(x=0.5,y=0.5)",
-                    "groups": "",
-                    "action": "Aiming",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
                     "name": "Keyboard",
                     "id": "f40c016f-cf80-4c52-9c0a-4a2d7c790406",
                     "path": "2DVector",
